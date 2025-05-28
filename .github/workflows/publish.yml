@@ -25,6 +25,7 @@ jobs:
           cp icon.svg ${{ env.PLUGIN_NAME }}/assets
           zip -r ${{ env.PLUGIN_NAME }}.zip ${{ env.PLUGIN_NAME }}
           ls
+          echo "tag_name=$(git tag --sort version:refname | tail -n 1)" >> $GITHUB_OUTPUT
 
       - name: Create Release
         uses: ncipollo/release-action@v1
@@ -44,4 +45,4 @@ jobs:
         with:
           files: |
             ${{ env.PLUGIN_NAME }}.zip
-          name: ${{ env.PLUGIN_NAME }}-${{ steps.build.outputs.tag_name }}
+          name: ${{ steps.build.outputs.tag_name }}
