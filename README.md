@@ -1,4 +1,12 @@
-# Logseq Flexoki Theme
+<p align="center">
+  <a href="https://github.com/avelino/flexoki-logseq">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/moclojer/moclojer/raw/main/icon.svg">
+      <img src="https://github.com/moclojer/moclojer/raw/main/icon.svg" height="128">
+    </picture>
+    <h1 align="center">Logseq Flexoki Theme</h1>
+  </a>
+</p>
 
 A beautiful, warm theme for Logseq inspired by Steph Ango's [Flexoki color scheme](https://stephango.com/flexoki). This theme brings the harmonious, paper-like aesthetic of Flexoki to your Logseq workspace.
 
