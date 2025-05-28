@@ -1,0 +1,48 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+env:
+  PLUGIN_NAME: logseq-flexoki-theme
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Build
+        id: build
+        run: |
+          mkdir ${{ env.PLUGIN_NAME }}
+          cp -r package.json flexoki-theme.css ${{ env.PLUGIN_NAME }}
+          mkdir ${{ env.PLUGIN_NAME }}/assets
+          cp assets/icon.svg ${{ env.PLUGIN_NAME }}/assets
+          zip -r ${{ env.PLUGIN_NAME }}.zip ${{ env.PLUGIN_NAME }}
+          ls
+
+      - name: Create Release
+        uses: ncipollo/release-action@v1
+        id: create_release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          allowUpdates: true
+          draft: false
+          prerelease: false
+
+      - name: Upload zip file
+        id: upload_zip
+        uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          files: |
+            ${{ env.PLUGIN_NAME }}.zip
+          name: ${{ env.PLUGIN_NAME }}-${{ steps.build.outputs.tag_name }}
