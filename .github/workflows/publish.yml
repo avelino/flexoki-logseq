@@ -20,10 +20,9 @@ jobs:
       - name: Build
         id: build
         run: |
-          mkdir ${{ env.PLUGIN_NAME }}
+          mkdir -p ${{ env.PLUGIN_NAME }}/assets
           cp -r package.json flexoki-theme.css ${{ env.PLUGIN_NAME }}
-          mkdir ${{ env.PLUGIN_NAME }}/assets
-          cp assets/icon.svg ${{ env.PLUGIN_NAME }}/assets
+          cp icon.svg ${{ env.PLUGIN_NAME }}/assets
           zip -r ${{ env.PLUGIN_NAME }}.zip ${{ env.PLUGIN_NAME }}
           ls
 
