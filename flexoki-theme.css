@@ -1,0 +1,794 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+/* =============================================== */
+/* FLEXOKI COLOR VARIABLES */
+/* =============================================== */
+
+/* Light Theme Colors */
+.white-theme, 
+html[data-theme=light] {
+    /* Flexoki Base Colors - Light */
+    --flexoki-base-00: #FFFCF0;
+    --flexoki-base-05: #FFFCF0;
+    --flexoki-base-10: #F2F0E5;
+    --flexoki-base-20: #F2F0E5;
+    --flexoki-base-25: #E6E4D9;
+    --flexoki-base-30: #E6E4D9;
+    --flexoki-base-35: #DAD8CE;
+    --flexoki-base-40: #CECDC3;
+    --flexoki-base-50: #B7B5AC;
+    --flexoki-base-60: #878580;
+    --flexoki-base-70: #6F6E69;
+    --flexoki-base-100: #100F0F;
+
+    /* Flexoki Accent Colors - Light */
+    --flexoki-red: #AF3029;
+    --flexoki-orange: #BC5215;
+    --flexoki-yellow: #AD8301;
+    --flexoki-green: #66800B;
+    --flexoki-cyan: #24837B;
+    --flexoki-blue: #205EA6;
+    --flexoki-purple: #5E409D;
+    --flexoki-pink: #A02F6F;
+
+    /* HSL versions for transparency */
+    --flexoki-red-hsl: 5, 65%, 42%;
+    --flexoki-orange-hsl: 22, 72%, 42%;
+    --flexoki-yellow-hsl: 41, 99%, 34%;
+    --flexoki-green-hsl: 75, 85%, 27%;
+    --flexoki-cyan-hsl: 175, 57%, 33%;
+    --flexoki-blue-hsl: 209, 68%, 39%;
+    --flexoki-purple-hsl: 256, 42%, 49%;
+    --flexoki-pink-hsl: 333, 49%, 40%;
+
+    /* Theme-specific mappings */
+    --flexoki-background: var(--flexoki-base-00);
+    --flexoki-background-2: var(--flexoki-base-10);
+    --flexoki-background-3: var(--flexoki-base-20);
+    --flexoki-background-4: var(--flexoki-base-25);
+    --flexoki-background-5: var(--flexoki-base-30);
+    --flexoki-background-6: var(--flexoki-base-35);
+    --flexoki-background-7: var(--flexoki-base-40);
+    --flexoki-background-8: var(--flexoki-base-50);
+
+    --flexoki-text-primary: var(--flexoki-base-100);
+    --flexoki-text-secondary: var(--flexoki-base-70);
+    --flexoki-text-tertiary: var(--flexoki-base-60);
+    --flexoki-text-quaternary: var(--flexoki-base-50);
+
+    --flexoki-border: var(--flexoki-base-40);
+    --flexoki-border-light: var(--flexoki-base-30);
+    --flexoki-border-lighter: var(--flexoki-base-25);
+}
+
+/* Dark Theme Colors */
+html[data-theme=dark] {
+    /* Flexoki Base Colors - Dark */
+    --flexoki-base-00: #100F0F;
+    --flexoki-base-05: #100F0F;
+    --flexoki-base-10: #1C1B1A;
+    --flexoki-base-20: #1C1B1A;
+    --flexoki-base-25: #282726;
+    --flexoki-base-30: #282726;
+    --flexoki-base-35: #343331;
+    --flexoki-base-40: #403E3C;
+    --flexoki-base-50: #575653;
+    --flexoki-base-60: #6F6E69;
+    --flexoki-base-70: #878580;
+    --flexoki-base-100: #CECDC3;
+
+    /* Flexoki Accent Colors - Dark */
+    --flexoki-red: #D14D41;
+    --flexoki-orange: #DA702C;
+    --flexoki-yellow: #D0A215;
+    --flexoki-green: #879A39;
+    --flexoki-cyan: #3AA99F;
+    --flexoki-blue: #4385BE;
+    --flexoki-purple: #8B7EC8;
+    --flexoki-pink: #CE5D97;
+
+    /* HSL versions for transparency */
+    --flexoki-red-hsl: 5, 62%, 54%;
+    --flexoki-orange-hsl: 25, 69%, 52%;
+    --flexoki-yellow-hsl: 45, 85%, 45%;
+    --flexoki-green-hsl: 75, 46%, 42%;
+    --flexoki-cyan-hsl: 175, 48%, 44%;
+    --flexoki-blue-hsl: 209, 48%, 51%;
+    --flexoki-purple-hsl: 256, 42%, 65%;
+    --flexoki-pink-hsl: 333, 49%, 59%;
+
+    /* Theme-specific mappings */
+    --flexoki-background: var(--flexoki-base-00);
+    --flexoki-background-2: var(--flexoki-base-10);
+    --flexoki-background-3: var(--flexoki-base-20);
+    --flexoki-background-4: var(--flexoki-base-25);
+    --flexoki-background-5: var(--flexoki-base-30);
+    --flexoki-background-6: var(--flexoki-base-35);
+    --flexoki-background-7: var(--flexoki-base-40);
+    --flexoki-background-8: var(--flexoki-base-50);
+
+    --flexoki-text-primary: var(--flexoki-base-100);
+    --flexoki-text-secondary: var(--flexoki-base-70);
+    --flexoki-text-tertiary: var(--flexoki-base-60);
+    --flexoki-text-quaternary: var(--flexoki-base-50);
+
+    --flexoki-border: var(--flexoki-base-40);
+    --flexoki-border-light: var(--flexoki-base-35);
+    --flexoki-border-lighter: var(--flexoki-base-30);
+}
+
+/* =============================================== */
+/* LOGSEQ VARIABLE MAPPINGS */
+/* =============================================== */
+
+.white-theme, 
+html[data-theme=light],
+html[data-theme=dark] {
+    /* Font */
+    --ls-font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    --ls-main-content-max-width: 900px;
+    --ls-tag-text-opacity: 0.6;
+    --ls-tag-text-hover-opacity: 0.8;
+
+    /* Background Colors */
+    --ls-primary-background-color: var(--flexoki-background);
+    --ls-secondary-background-color: var(--flexoki-background-4);
+    --ls-tertiary-background-color: var(--flexoki-background-5);
+    --ls-quaternary-background-color: var(--flexoki-background-7);
+
+    /* Text Colors */
+    --ls-primary-text-color: var(--flexoki-text-primary);
+    --ls-secondary-text-color: var(--flexoki-text-secondary);
+    --ls-title-text-color: var(--flexoki-text-secondary);
+
+    /* Border Colors */
+    --ls-border-color: var(--flexoki-border-light);
+    --ls-secondary-border-color: var(--flexoki-border);
+    --ls-tertiary-border-color: var(--flexoki-border-lighter);
+
+    /* Link Colors */
+    --ls-link-text-color: var(--flexoki-blue);
+    --ls-link-text-hover-color: var(--flexoki-cyan);
+    --ls-link-ref-text-color: var(--flexoki-purple);
+    --ls-link-ref-text-hover-color: var(--flexoki-pink);
+
+    /* Tag Colors */
+    --ls-tag-text-color: var(--flexoki-purple);
+    --ls-tag-text-hover-color: var(--flexoki-pink);
+
+    /* Selection */
+    --ls-selection-background-color: hsl(var(--flexoki-blue-hsl), 0.3);
+    --ls-selection-text-color: var(--flexoki-text-primary);
+
+    /* Code */
+    --ls-page-inline-code-color: var(--flexoki-text-primary);
+    --ls-page-inline-code-bg-color: var(--flexoki-background-6);
+
+    /* Block Quote */
+    --ls-page-blockquote-color: var(--flexoki-text-primary);
+    --ls-page-blockquote-bg-color: var(--flexoki-background-4);
+    --ls-page-blockquote-border-color: var(--flexoki-orange);
+
+    /* Bullets */
+    --ls-block-bullet-color: var(--flexoki-text-quaternary);
+    --ls-block-bullet-border-color: hsl(var(--flexoki-text-secondary), 0.25);
+
+    /* Highlights */
+    --ls-highlight-color-gray: var(--flexoki-base-60);
+    --ls-highlight-color-red: var(--flexoki-red);
+    --ls-highlight-color-yellow: var(--flexoki-yellow);
+    --ls-highlight-color-green: var(--flexoki-green);
+    --ls-highlight-color-blue: var(--flexoki-blue);
+    --ls-highlight-color-purple: var(--flexoki-purple);
+    --ls-highlight-color-pink: var(--flexoki-pink);
+
+    /* Mark/Highlight */
+    --ls-page-mark-color: var(--flexoki-text-primary);
+    --ls-page-mark-bg-color: hsl(var(--flexoki-yellow-hsl), 0.4);
+
+    /* Block highlight */
+    --ls-block-highlight-color: hsl(var(--flexoki-cyan-hsl), 0.2);
+
+    /* Menu & Header */
+    --ls-header-button-background: var(--flexoki-text-quaternary);
+    --ls-menu-hover-color: var(--flexoki-background-6);
+
+    /* Icon */
+    --ls-icon-color: var(--flexoki-text-quaternary);
+
+    /* Success/Error/Warning */
+    --ls-error-text-color: var(--flexoki-red);
+    --ls-warning-text-color: var(--flexoki-yellow);
+    --ls-success-text-color: var(--flexoki-green);
+
+    /* Scrollbar */
+    --ls-scrollbar-foreground-color: hsl(var(--flexoki-text-quaternary), 0.5);
+    --ls-scrollbar-background-color: hsl(var(--flexoki-text-quaternary), 0.1);
+    --ls-scrollbar-thumb-hover-color: hsl(var(--flexoki-text-quaternary), 0.8);
+
+    /* Search */
+    --ls-search-icon-color: var(--flexoki-blue);
+
+    /* Cloze */
+    --ls-cloze-text-color: var(--flexoki-purple);
+
+    /* Properties */
+    --ls-page-properties-background-color: var(--flexoki-background-3);
+    --ls-block-properties-background-color: var(--flexoki-background-3);
+
+    /* Table */
+    --ls-table-tr-even-background-color: var(--flexoki-background-3);
+
+    /* Checkbox */
+    --ls-page-checkbox-color: var(--flexoki-cyan);
+    --ls-page-checkbox-border-color: var(--flexoki-background);
+
+    /* Task marker */
+    --ls-marker-text-color: var(--flexoki-text-tertiary);
+    --ls-marker-text-bg-color: var(--flexoki-background-7);
+
+    /* Active/Focus colors */
+    --ls-active-primary-color: var(--flexoki-blue);
+    --ls-active-secondary-color: var(--flexoki-cyan);
+
+    /* Guideline */
+    --ls-guideline-color: var(--flexoki-border);
+
+    /* Block ref */
+    --ls-block-ref-link-text-color: var(--flexoki-purple);
+
+    /* Embedded block levels */
+    --color-level-1: var(--flexoki-background-3);
+    --color-level-2: var(--flexoki-background-4);
+    --color-level-3: var(--flexoki-background-5);
+    --color-level-4: var(--flexoki-background-6);
+    --color-level-5: var(--flexoki-background-7);
+    --color-level-6: var(--flexoki-background-8);
+}
+
+/* =============================================== */
+/* GLOBAL STYLES */
+/* =============================================== */
+
+:root {
+    --flexoki-shadow-light: rgba(255, 255, 255, 0.1);
+    --flexoki-shadow-dark: rgba(0, 0, 0, 0.1);
+    --flexoki-shadow-medium: rgba(0, 0, 0, 0.2);
+}
+
+/* Background pattern */
+#app-container {
+    background-image: radial-gradient(
+        var(--flexoki-border-lighter) 5%,
+        var(--flexoki-background) 5%
+    );
+    background-position: 0 0;
+    background-size: 25px 25px;
+}
+
+body[data-page=whiteboard] #app-container {
+    background-image: none;
+}
+
+/* Selection */
+::selection {
+    background-color: var(--ls-selection-background-color) !important;
+    color: var(--ls-selection-text-color) !important;
+}
+
+/* =============================================== */
+/* SIDEBAR STYLES */
+/* =============================================== */
+
+/* Left Sidebar */
+#left-sidebar > .left-sidebar-inner {
+    background-color: var(--flexoki-background-2);
+}
+
+#left-sidebar a.item .ui__icon,
+#left-sidebar .header a .ui__icon {
+    color: var(--flexoki-cyan);
+}
+
+#left-sidebar a.item,
+#left-sidebar .header a {
+    color: var(--flexoki-text-primary);
+}
+
+#left-sidebar a.item:hover,
+#left-sidebar .header:hover,
+#left-sidebar .favorite-item a:hover,
+#left-sidebar .recent-item a:hover {
+    background-color: var(--ls-menu-hover-color);
+}
+
+/* Right Sidebar */
+#right-sidebar .cp__right-sidebar-inner {
+    background-color: var(--flexoki-background-2);
+    border-left: 1px solid var(--ls-border-color);
+}
+
+#right-sidebar .sidebar-item .sidebar-item-header {
+    background: linear-gradient(0deg, var(--flexoki-background-4), var(--flexoki-background-3));
+}
+
+#right-sidebar .sidebar-item.collapsed .sidebar-item-header {
+    background: var(--flexoki-background-3);
+}
+
+/* =============================================== */
+/* TEXT & CONTENT STYLES */
+/* =============================================== */
+
+/* Page title */
+h1.page-title {
+    color: var(--ls-title-text-color);
+    font-weight: 700;
+}
+
+/* Headings */
+.editor-inner .uniline-block.h1,
+.ls-block h1 {
+    border-bottom-color: var(--ls-guideline-color);
+    font-size: 2em;
+    font-weight: 600;
+}
+
+.editor-inner .uniline-block.h2,
+.ls-block h2 {
+    border-bottom-color: var(--ls-guideline-color);
+    font-size: 1.6em;
+    font-weight: 600;
+}
+
+.editor-inner .uniline-block.h3,
+.ls-block h3 {
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+.editor-inner .uniline-block.h4,
+.ls-block h4 {
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.editor-inner .uniline-block.h5,
+.ls-block h5 {
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.editor-inner .uniline-block.h6,
+.ls-block h6 {
+    font-size: 1em;
+    font-weight: 500;
+}
+
+/* Text emphasis */
+b, strong {
+    color: var(--flexoki-text-secondary);
+}
+
+i {
+    color: var(--flexoki-text-secondary);
+    font-weight: 500;
+}
+
+/* Mark/Highlight */
+mark {
+    border-radius: 3px;
+    padding: 3px 5px;
+    background-color: var(--ls-page-mark-bg-color);
+    color: var(--ls-page-mark-color);
+}
+
+/* Code */
+code {
+    background-color: var(--ls-page-inline-code-bg-color);
+    color: var(--ls-page-inline-code-color);
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+/* Block quote */
+blockquote {
+    border-left: 4px solid var(--ls-page-blockquote-border-color);
+    background-color: var(--ls-page-blockquote-bg-color);
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 0 4px 4px 0;
+}
+
+/* =============================================== */
+/* LINKS & REFERENCES */
+/* =============================================== */
+
+/* Page references */
+.page-ref {
+    color: var(--ls-link-ref-text-color);
+}
+
+.page-ref:hover {
+    color: var(--ls-link-ref-text-hover-color);
+}
+
+.page-reference .bracket {
+    opacity: 0.5;
+    color: var(--flexoki-text-quaternary);
+}
+
+.page-reference:hover {
+    background: hsl(var(--flexoki-purple-hsl), 0.1);
+    border-radius: 3px;
+}
+
+/* External links */
+a {
+    color: var(--ls-link-text-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--ls-link-text-hover-color);
+    text-decoration: underline;
+}
+
+/* Tags */
+a.tag {
+    color: var(--ls-tag-text-color);
+    opacity: var(--ls-tag-text-opacity);
+}
+
+a.tag:hover {
+    color: var(--ls-tag-text-hover-color);
+    opacity: var(--ls-tag-text-hover-opacity);
+    text-decoration: none;
+}
+
+/* Block references */
+.block-ref-wrap {
+    border-bottom: none;
+    padding: 2px 5px;
+    border-radius: 3px;
+    background: hsl(var(--flexoki-cyan-hsl), 0.15);
+}
+
+.block-ref-wrap:hover {
+    background: hsl(var(--flexoki-cyan-hsl), 0.25);
+}
+
+/* =============================================== */
+/* BLOCKS & BULLETS */
+/* =============================================== */
+
+/* Bullets */
+.bullet-container .bullet {
+    background-color: var(--ls-block-bullet-color);
+}
+
+.bullet-container:hover .bullet {
+    background-color: var(--flexoki-blue);
+}
+
+.bullet-container .bullet.selected {
+    background-color: var(--flexoki-purple);
+}
+
+/* Block highlighting */
+.ls-block.selected {
+    background-color: var(--ls-block-highlight-color);
+    border-radius: 4px;
+}
+
+/* Guidelines */
+.block-children-left-border {
+    opacity: 1;
+    border-left-color: var(--ls-guideline-color);
+}
+
+.block-children-left-border:hover {
+    background-color: hsl(var(--flexoki-cyan-hsl), 0.1);
+}
+
+/* =============================================== */
+/* FORMS & INPUTS */
+/* =============================================== */
+
+/* Checkboxes */
+.form-checkbox {
+    border-radius: 2px;
+    border-color: var(--ls-page-checkbox-border-color);
+    background-color: var(--ls-page-checkbox-color);
+}
+
+.form-checkbox:checked {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 16 16' fill='%23FFFFFF' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.207 4.793a1 1 0 0 1 0 1.414l-5 5a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L6.5 9.086l4.293-4.293a1 1 0 0 1 1.414 0z'/%3E%3C/svg%3E");
+}
+
+/* Form inputs */
+.form-input,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+    background-color: var(--ls-primary-background-color);
+    border-color: var(--ls-border-color);
+    color: var(--ls-primary-text-color);
+    border-radius: 4px;
+}
+
+.form-input:focus,
+input:focus,
+textarea:focus {
+    border-color: var(--flexoki-blue);
+    box-shadow: 0 0 0 2px hsl(var(--flexoki-blue-hsl), 0.2);
+}
+
+/* =============================================== */
+/* BUTTONS & CONTROLS */
+/* =============================================== */
+
+/* General buttons */
+button.ui__button {
+    background-color: var(--flexoki-background-4);
+    color: var(--flexoki-text-primary);
+    border: 1px solid var(--ls-border-color);
+    border-radius: 4px;
+    padding: 6px 12px;
+}
+
+button.ui__button:hover {
+    background-color: var(--flexoki-background-5);
+    border-color: var(--flexoki-blue);
+}
+
+button.ui__button:focus {
+    border-color: var(--flexoki-blue);
+    box-shadow: 0 0 0 2px hsl(var(--flexoki-blue-hsl), 0.2);
+}
+
+/* Primary buttons */
+button.ui__button.ui__button-theme-color {
+    background-color: var(--flexoki-blue);
+    color: var(--flexoki-background);
+    border-color: var(--flexoki-blue);
+}
+
+button.ui__button.ui__button-theme-color:hover {
+    background-color: var(--flexoki-cyan);
+    border-color: var(--flexoki-cyan);
+}
+
+/* =============================================== */
+/* SEARCH & MODALS */
+/* =============================================== */
+
+/* Search modal */
+.cp__cmdk {
+    background-color: var(--flexoki-background-2);
+    border: 1px solid var(--ls-border-color);
+    border-radius: 8px;
+}
+
+.cp__cmdk .search-results > div:hover {
+    background-color: var(--flexoki-background-4);
+}
+
+.cp__cmdk .ui__list-item-highlighted-span {
+    background-color: var(--ls-page-mark-bg-color);
+    color: var(--flexoki-text-primary);
+}
+
+/* Modal panels */
+.ui__modal-panel {
+    background-color: var(--ls-primary-background-color);
+    border: 1px solid var(--ls-border-color);
+    border-radius: 8px;
+}
+
+/* =============================================== */
+/* CODE BLOCKS */
+/* =============================================== */
+
+.CodeMirror {
+    color: var(--flexoki-text-secondary);
+    background-color: var(--flexoki-background-2);
+    border-radius: 4px;
+}
+
+.CodeMirror .CodeMirror-cursor {
+    border-left: solid thin var(--flexoki-blue);
+}
+
+.CodeMirror .CodeMirror-selected {
+    background: hsl(var(--flexoki-cyan-hsl), 0.2);
+}
+
+.CodeMirror .cm-keyword {
+    color: var(--flexoki-red);
+}
+
+.CodeMirror .cm-string,
+.CodeMirror .cm-string-2 {
+    color: var(--flexoki-yellow);
+}
+
+.CodeMirror .cm-number {
+    color: var(--flexoki-pink);
+}
+
+.CodeMirror .cm-comment {
+    color: var(--flexoki-text-quaternary);
+    font-style: italic;
+}
+
+.CodeMirror .cm-variable {
+    color: var(--flexoki-purple);
+}
+
+.CodeMirror .cm-property {
+    color: var(--flexoki-blue);
+}
+
+.CodeMirror .cm-builtin {
+    color: var(--flexoki-cyan);
+}
+
+.CodeMirror .cm-meta {
+    color: var(--flexoki-green);
+}
+
+/* =============================================== */
+/* PROPERTIES & METADATA */
+/* =============================================== */
+
+.page-properties,
+.block-properties {
+    background-color: var(--ls-page-properties-background-color);
+    border-radius: 4px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.page-property-key {
+    color: var(--flexoki-text-secondary);
+    font-weight: 500;
+}
+
+.page-property-key:hover {
+    color: var(--flexoki-blue);
+}
+
+/* =============================================== */
+/* TASK & MARKERS */
+/* =============================================== */
+
+.marker-switch {
+    background-color: var(--ls-marker-text-bg-color);
+    color: var(--ls-marker-text-color);
+    border-radius: 3px;
+    padding: 2px 6px;
+    font-size: 0.8em;
+}
+
+.marker-switch:hover {
+    background-color: var(--flexoki-background-7);
+}
+
+/* Priority markers */
+a.priority {
+    font-size: 0;
+    color: transparent;
+}
+
+a.priority::before {
+    font-family: 'tabler-icons';
+    font-size: 11px;
+    padding: 2px;
+    border-radius: 2px;
+    position: relative;
+    color: var(--flexoki-background);
+}
+
+a.priority[href="#/page/A" i]::before {
+    content: "!";
+    background-color: var(--flexoki-red);
+}
+
+a.priority[href="#/page/B" i]::before {
+    content: "!!";
+    background-color: var(--flexoki-yellow);
+}
+
+a.priority[href="#/page/C" i]::before {
+    content: "!!!";
+    background-color: var(--flexoki-blue);
+}
+
+/* =============================================== */
+/* SCROLLBARS */
+/* =============================================== */
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--ls-scrollbar-background-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--ls-scrollbar-foreground-color);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--ls-scrollbar-thumb-hover-color);
+}
+
+/* =============================================== */
+/* RESPONSIVE & MISC */
+/* =============================================== */
+
+/* Disable animations for better performance */
+.left-sidebar-inner *,
+.cp__header * {
+    transition: none !important;
+}
+
+/* Table styling */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 10px 0;
+}
+
+table th,
+table td {
+    border: 1px solid var(--ls-border-color);
+    padding: 8px 12px;
+    text-align: left;
+}
+
+table th {
+    background-color: var(--flexoki-background-3);
+    font-weight: 600;
+}
+
+table tr:nth-child(even) {
+    background-color: var(--ls-table-tr-even-background-color);
+}
+
+/* Notifications */
+.ui__notifications .notification-area {
+    background-color: var(--flexoki-background-2);
+    border: 1px solid var(--ls-border-color);
+    border-radius: 6px;
+}
+
+/* Date picker */
+.datepicker {
+    background: var(--ls-primary-background-color);
+    border: 1px solid var(--ls-border-color);
+    border-radius: 6px;
+}
+
+.datepicker td.available:hover {
+    background-color: hsl(var(--flexoki-blue-hsl), 0.1);
+}
+
+.datepicker td.active {
+    background-color: var(--flexoki-blue);
+    color: var(--flexoki-background);
+}
+
+/* Progress bars */
+.ui__loading-bar {
+    background-color: var(--flexoki-background-4);
+}
+
+.ui__loading-bar .progress {
+    background-color: var(--flexoki-blue);
+}

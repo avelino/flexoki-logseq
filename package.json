@@ -1,0 +1,25 @@
+{
+  "name": "Flexoki Theme",
+  "author": "Avelino",
+  "version": "1.0.0",
+  "description": "A beautiful, warm theme for Logseq inspired by Steph Ango's Flexoki color scheme",
+  "logseq": {
+    "id": "logseq-flexoki-theme",
+    "title": "Flexoki Theme",
+    "icon": "./icon.svg",
+    "themes": [
+      {
+        "name": "Flexoki Light",
+        "url": "./flexoki-theme.css",
+        "description": "A beautiful, warm theme inspired by Flexoki color scheme with support for both light and dark modes",
+        "mode": "light"
+      },
+      {
+        "name": "Flexoki Dark",
+        "url": "./flexoki-theme.css",
+        "description": "A beautiful, warm theme inspired by Flexoki color scheme with support for both light and dark modes",
+        "mode": "dark"
+      }
+    ]
+  }
+}
