@@ -10,6 +10,8 @@
 
 A beautiful, warm theme for Logseq inspired by Steph Ango's [Flexoki color scheme](https://stephango.com/flexoki). This theme brings the harmonious, paper-like aesthetic of Flexoki to your Logseq workspace.
 
+![Flexoki Theme Screenshot](./flexoki-theme.png)
+
 ## Features
 
 - 🎨 **Flexoki Color Palette**: Warm, paper-inspired colors that are easy on the eyes
@@ -86,10 +88,6 @@ You can modify these values to create your own variation of the theme.
 - ✅ **Task Management**: TODO states, priorities, and markers
 - ✅ **Interactive Elements**: Buttons, forms, and controls
 - ✅ **Typography**: Optimized text hierarchy and spacing
-
-## Screenshots
-
-![Flexoki Theme Screenshot](./flexoki-theme.png)
 
 ## File Structure
 
