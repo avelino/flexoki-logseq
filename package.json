@@ -1,7 +1,7 @@
 {
   "name": "Flexoki Theme",
   "author": "Avelino",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A beautifully crafted, accessible theme for Logseq inspired by Steph Ango's Flexoki color scheme. Enhanced with professional design system, accessibility features, and performance optimizations.",
   "keywords": [
     "logseq",
@@ -34,7 +34,7 @@
         "mode": "light"
       },
       {
-        "name": "Flexoki Dark", 
+        "name": "Flexoki Dark",
         "url": "./flexoki-theme.css",
         "description": "Enhanced Flexoki theme with warm, comfortable colors for dark mode. Features improved accessibility, responsive design, and professional typography.",
         "mode": "dark"
