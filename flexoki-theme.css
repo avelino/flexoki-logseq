@@ -1,8 +1,87 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
+/* 
+ * Flexoki Theme v2.0 for Logseq
+ * Enhanced version with improved accessibility, performance, and maintainability
+ * Base color system inspired by Flexoki palette
+ * Supports both light and dark themes with automatic switching
+ */
+
 /* =============================================== */
-/* FLEXOKI COLOR VARIABLES */
+/* GLOBAL VARIABLES AND DESIGN TOKENS */
 /* =============================================== */
+
+:root {
+    /* Breakpoints */
+    --flexoki-bp-sm: 640px;
+    --flexoki-bp-md: 768px;
+    --flexoki-bp-lg: 1024px;
+    --flexoki-bp-xl: 1280px;
+    
+    /* Spacing System */
+    --flexoki-space-xs: 2px;
+    --flexoki-space-sm: 4px;
+    --flexoki-space-md: 8px;
+    --flexoki-space-lg: 16px;
+    --flexoki-space-xl: 24px;
+    --flexoki-space-2xl: 32px;
+    --flexoki-space-3xl: 48px;
+    
+    /* Border Radius */
+    --flexoki-radius-none: 0;
+    --flexoki-radius-sm: 3px;
+    --flexoki-radius-md: 6px;
+    --flexoki-radius-lg: 12px;
+    --flexoki-radius-xl: 16px;
+    --flexoki-radius-full: 9999px;
+    
+    /* Typography Scale */
+    --flexoki-text-xs: 0.75rem;
+    --flexoki-text-sm: 0.875rem;
+    --flexoki-text-base: 1rem;
+    --flexoki-text-lg: 1.125rem;
+    --flexoki-text-xl: 1.25rem;
+    --flexoki-text-2xl: 1.5rem;
+    --flexoki-text-3xl: 1.875rem;
+    --flexoki-text-4xl: 2.25rem;
+    
+    /* Font Weights */
+    --flexoki-font-light: 300;
+    --flexoki-font-normal: 400;
+    --flexoki-font-medium: 500;
+    --flexoki-font-semibold: 600;
+    --flexoki-font-bold: 700;
+    
+    /* Shadows */
+    --flexoki-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --flexoki-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --flexoki-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --flexoki-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    
+    /* Transitions */
+    --flexoki-transition-fast: 0.15s ease;
+    --flexoki-transition-base: 0.2s ease;
+    --flexoki-transition-slow: 0.3s ease;
+    
+    /* Z-Index Scale */
+    --flexoki-z-dropdown: 1000;
+    --flexoki-z-sticky: 1020;
+    --flexoki-z-fixed: 1030;
+    --flexoki-z-modal: 1040;
+    --flexoki-z-popover: 1050;
+    --flexoki-z-tooltip: 1060;
+}
+
+/* =============================================== */
+/* FLEXOKI COLOR SYSTEM */
+/* =============================================== */
+
+/* 
+ * Color naming convention:
+ * - base-XX: Neutral colors (00 = lightest in light theme, 100 = darkest)
+ * - Accent colors: red, orange, yellow, green, cyan, blue, purple, pink
+ * - Each theme maps these bases to semantic names for consistency
+ */
 
 /* Light Theme Colors */
 .white-theme, 
@@ -41,24 +120,36 @@ html[data-theme=light] {
     --flexoki-purple-hsl: 256, 42%, 49%;
     --flexoki-pink-hsl: 333, 49%, 40%;
 
-    /* Theme-specific mappings */
+    /* Semantic Color Mappings */
     --flexoki-background: var(--flexoki-base-00);
-    --flexoki-background-2: var(--flexoki-base-10);
-    --flexoki-background-3: var(--flexoki-base-20);
-    --flexoki-background-4: var(--flexoki-base-25);
-    --flexoki-background-5: var(--flexoki-base-30);
-    --flexoki-background-6: var(--flexoki-base-35);
-    --flexoki-background-7: var(--flexoki-base-40);
-    --flexoki-background-8: var(--flexoki-base-50);
+    --flexoki-background-secondary: var(--flexoki-base-10);
+    --flexoki-background-tertiary: var(--flexoki-base-20);
+    --flexoki-background-quaternary: var(--flexoki-base-25);
+    --flexoki-background-elevated: var(--flexoki-base-30);
+    --flexoki-background-elevated-secondary: var(--flexoki-base-35);
+    --flexoki-background-elevated-tertiary: var(--flexoki-base-40);
+    --flexoki-background-muted: var(--flexoki-base-50);
 
     --flexoki-text-primary: var(--flexoki-base-100);
     --flexoki-text-secondary: var(--flexoki-base-70);
     --flexoki-text-tertiary: var(--flexoki-base-60);
     --flexoki-text-quaternary: var(--flexoki-base-50);
+    --flexoki-text-disabled: var(--flexoki-base-40);
 
     --flexoki-border: var(--flexoki-base-40);
     --flexoki-border-light: var(--flexoki-base-30);
     --flexoki-border-lighter: var(--flexoki-base-25);
+    --flexoki-border-focus: var(--flexoki-blue);
+
+    /* Accent variations */
+    --flexoki-red-light: hsla(var(--flexoki-red-hsl), 0.1);
+    --flexoki-orange-light: hsla(var(--flexoki-orange-hsl), 0.1);
+    --flexoki-yellow-light: hsla(var(--flexoki-yellow-hsl), 0.1);
+    --flexoki-green-light: hsla(var(--flexoki-green-hsl), 0.1);
+    --flexoki-cyan-light: hsla(var(--flexoki-cyan-hsl), 0.1);
+    --flexoki-blue-light: hsla(var(--flexoki-blue-hsl), 0.1);
+    --flexoki-purple-light: hsla(var(--flexoki-purple-hsl), 0.1);
+    --flexoki-pink-light: hsla(var(--flexoki-pink-hsl), 0.1);
 }
 
 /* Dark Theme Colors */
@@ -97,25 +188,853 @@ html[data-theme=dark] {
     --flexoki-purple-hsl: 256, 42%, 65%;
     --flexoki-pink-hsl: 333, 49%, 59%;
 
-    /* Theme-specific mappings */
+    /* Semantic Color Mappings */
     --flexoki-background: var(--flexoki-base-00);
-    --flexoki-background-2: var(--flexoki-base-10);
-    --flexoki-background-3: var(--flexoki-base-20);
-    --flexoki-background-4: var(--flexoki-base-25);
-    --flexoki-background-5: var(--flexoki-base-30);
-    --flexoki-background-6: var(--flexoki-base-35);
-    --flexoki-background-7: var(--flexoki-base-40);
-    --flexoki-background-8: var(--flexoki-base-50);
+    --flexoki-background-secondary: var(--flexoki-base-10);
+    --flexoki-background-tertiary: var(--flexoki-base-20);
+    --flexoki-background-quaternary: var(--flexoki-base-25);
+    --flexoki-background-elevated: var(--flexoki-base-30);
+    --flexoki-background-elevated-secondary: var(--flexoki-base-35);
+    --flexoki-background-elevated-tertiary: var(--flexoki-base-40);
+    --flexoki-background-muted: var(--flexoki-base-50);
 
     --flexoki-text-primary: var(--flexoki-base-100);
     --flexoki-text-secondary: var(--flexoki-base-70);
     --flexoki-text-tertiary: var(--flexoki-base-60);
     --flexoki-text-quaternary: var(--flexoki-base-50);
+    --flexoki-text-disabled: var(--flexoki-base-40);
 
     --flexoki-border: var(--flexoki-base-40);
     --flexoki-border-light: var(--flexoki-base-35);
     --flexoki-border-lighter: var(--flexoki-base-30);
+    --flexoki-border-focus: var(--flexoki-blue);
+
+    /* Accent variations */
+    --flexoki-red-light: hsla(var(--flexoki-red-hsl), 0.15);
+    --flexoki-orange-light: hsla(var(--flexoki-orange-hsl), 0.15);
+    --flexoki-yellow-light: hsla(var(--flexoki-yellow-hsl), 0.15);
+    --flexoki-green-light: hsla(var(--flexoki-green-hsl), 0.15);
+    --flexoki-cyan-light: hsla(var(--flexoki-cyan-hsl), 0.15);
+    --flexoki-blue-light: hsla(var(--flexoki-blue-hsl), 0.15);
+    --flexoki-purple-light: hsla(var(--flexoki-purple-hsl), 0.15);
+    --flexoki-pink-light: hsla(var(--flexoki-pink-hsl), 0.15);
 }
+
+/* =============================================== */
+/* UNIVERSAL STYLES AND RESET */
+/* =============================================== */
+
+/* Enhanced universal transitions with performance optimization */
+*,
+*::before,
+*::after {
+    transition: 
+        background-color var(--flexoki-transition-base),
+        border-color var(--flexoki-transition-base),
+        color var(--flexoki-transition-base),
+        opacity var(--flexoki-transition-base),
+        box-shadow var(--flexoki-transition-base),
+        transform var(--flexoki-transition-fast);
+}
+
+/* Reduced motion support for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Improved focus management for accessibility */
+*:focus {
+    outline: none;
+}
+
+.focus-visible,
+*:focus-visible {
+    outline: 2px solid var(--flexoki-border-focus);
+    outline-offset: var(--flexoki-space-xs);
+    border-radius: var(--flexoki-radius-sm);
+}
+
+/* Selection styling */
+::selection {
+    background-color: var(--flexoki-blue-light);
+    color: var(--flexoki-text-primary);
+}
+
+/* =============================================== */
+/* LAYOUT AND CONTAINER STYLES */
+/* =============================================== */
+
+/* Main app container with enhanced background pattern */
+#app-container {
+    background-image: radial-gradient(
+        var(--flexoki-border-lighter) 5%,
+        var(--flexoki-background) 5%
+    );
+    background-position: 0 0;
+    background-size: 25px 25px;
+    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--flexoki-text-primary);
+    background-color: var(--flexoki-background);
+}
+
+/* Responsive background pattern */
+@media (max-width: 768px) {
+    #app-container {
+        background-size: 15px 15px;
+    }
+}
+
+/* Whiteboard mode - clean background */
+body[data-page=whiteboard] #app-container {
+    background-image: none;
+    background-color: var(--flexoki-background);
+}
+
+/* =============================================== */
+/* SIDEBAR STYLES */
+/* =============================================== */
+
+/* Left Sidebar */
+#left-sidebar > .left-sidebar-inner {
+    background-color: var(--flexoki-background-secondary);
+    border-right: 1px solid var(--flexoki-border-light);
+}
+
+/* Sidebar icons with accent color */
+.sidebar-icon,
+#left-sidebar a.item .ui__icon,
+#left-sidebar .header a .ui__icon {
+    color: var(--flexoki-cyan);
+    transition: color var(--flexoki-transition-base);
+}
+
+/* Sidebar links */
+.sidebar-link,
+#left-sidebar a.item,
+#left-sidebar .header a {
+    color: var(--flexoki-text-primary);
+    border-radius: var(--flexoki-radius-sm);
+    padding: var(--flexoki-space-md) var(--flexoki-space-lg);
+    margin: var(--flexoki-space-xs) var(--flexoki-space-md);
+}
+
+/* Sidebar hover states */
+.sidebar-link:hover,
+#left-sidebar a.item:hover,
+#left-sidebar .header:hover,
+#left-sidebar .favorite-item a:hover,
+#left-sidebar .recent-item a:hover {
+    background-color: var(--flexoki-background-elevated);
+    color: var(--flexoki-text-primary);
+    transform: translateX(2px);
+}
+
+/* Right Sidebar */
+#right-sidebar .cp__right-sidebar-inner {
+    background-color: var(--flexoki-background-secondary);
+    border-left: 1px solid var(--flexoki-border-light);
+}
+
+#right-sidebar .sidebar-item .sidebar-item-header {
+    background: linear-gradient(
+        180deg,
+        var(--flexoki-background-quaternary) 0%,
+        var(--flexoki-background-tertiary) 100%
+    );
+    border-radius: var(--flexoki-radius-md) var(--flexoki-radius-md) 0 0;
+    padding: var(--flexoki-space-lg);
+}
+
+#right-sidebar .sidebar-item.collapsed .sidebar-item-header {
+    background: var(--flexoki-background-tertiary);
+    border-radius: var(--flexoki-radius-md);
+}
+
+/* =============================================== */
+/* TYPOGRAPHY AND TEXT STYLES */
+/* =============================================== */
+
+/* Page title */
+h1.page-title {
+    color: var(--flexoki-text-primary);
+    font-weight: var(--flexoki-font-bold);
+    font-size: var(--flexoki-text-3xl);
+    margin-bottom: var(--flexoki-space-xl);
+    line-height: 1.2;
+}
+
+/* Heading hierarchy with improved typography scale */
+.editor-inner .uniline-block.h1,
+.ls-block h1 {
+    border-bottom: 2px solid var(--flexoki-border);
+    font-size: var(--flexoki-text-2xl);
+    font-weight: var(--flexoki-font-semibold);
+    margin: var(--flexoki-space-2xl) 0 var(--flexoki-space-lg) 0;
+    padding-bottom: var(--flexoki-space-md);
+    color: var(--flexoki-text-primary);
+    line-height: 1.3;
+}
+
+.editor-inner .uniline-block.h2,
+.ls-block h2 {
+    border-bottom: 1px solid var(--flexoki-border-light);
+    font-size: var(--flexoki-text-xl);
+    font-weight: var(--flexoki-font-semibold);
+    margin: var(--flexoki-space-xl) 0 var(--flexoki-space-md) 0;
+    padding-bottom: var(--flexoki-space-sm);
+    color: var(--flexoki-text-primary);
+    line-height: 1.4;
+}
+
+.editor-inner .uniline-block.h3,
+.ls-block h3 {
+    font-size: var(--flexoki-text-lg);
+    font-weight: var(--flexoki-font-semibold);
+    margin: var(--flexoki-space-lg) 0 var(--flexoki-space-md) 0;
+    color: var(--flexoki-text-primary);
+    line-height: 1.4;
+}
+
+.editor-inner .uniline-block.h4,
+.ls-block h4 {
+    font-size: var(--flexoki-text-base);
+    font-weight: var(--flexoki-font-semibold);
+    margin: var(--flexoki-space-lg) 0 var(--flexoki-space-sm) 0;
+    color: var(--flexoki-text-secondary);
+    line-height: 1.5;
+}
+
+.editor-inner .uniline-block.h5,
+.ls-block h5 {
+    font-size: var(--flexoki-text-sm);
+    font-weight: var(--flexoki-font-medium);
+    margin: var(--flexoki-space-md) 0 var(--flexoki-space-sm) 0;
+    color: var(--flexoki-text-secondary);
+    line-height: 1.5;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.editor-inner .uniline-block.h6,
+.ls-block h6 {
+    font-size: var(--flexoki-text-xs);
+    font-weight: var(--flexoki-font-medium);
+    margin: var(--flexoki-space-md) 0 var(--flexoki-space-sm) 0;
+    color: var(--flexoki-text-tertiary);
+    line-height: 1.5;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* Text emphasis with improved contrast */
+b, strong {
+    color: var(--flexoki-text-primary);
+    font-weight: var(--flexoki-font-semibold);
+}
+
+i, em {
+    color: var(--flexoki-text-secondary);
+    font-weight: var(--flexoki-font-medium);
+    font-style: italic;
+}
+
+/* Enhanced mark/highlight */
+mark {
+    background-color: var(--flexoki-yellow-light);
+    color: var(--flexoki-text-primary);
+    padding: var(--flexoki-space-xs) var(--flexoki-space-sm);
+    border-radius: var(--flexoki-radius-sm);
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+}
+
+/* Improved inline code */
+code {
+    background-color: var(--flexoki-background-elevated);
+    color: var(--flexoki-cyan);
+    font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', Consolas, monospace;
+    font-size: 0.9em;
+    padding: var(--flexoki-space-xs) var(--flexoki-space-sm);
+    border-radius: var(--flexoki-radius-sm);
+    border: 1px solid var(--flexoki-border-light);
+}
+
+/* Enhanced blockquote */
+blockquote {
+    border-left: 4px solid var(--flexoki-blue);
+    background-color: var(--flexoki-blue-light);
+    padding: var(--flexoki-space-lg) var(--flexoki-space-xl);
+    margin: var(--flexoki-space-lg) 0;
+    border-radius: 0 var(--flexoki-radius-md) var(--flexoki-radius-md) 0;
+    font-style: italic;
+    color: var(--flexoki-text-secondary);
+    position: relative;
+}
+
+blockquote::before {
+    content: '"';
+    font-size: var(--flexoki-text-4xl);
+    color: var(--flexoki-blue);
+    position: absolute;
+    top: var(--flexoki-space-md);
+    left: var(--flexoki-space-lg);
+    line-height: 1;
+    opacity: 0.3;
+}
+
+/* =============================================== */
+/* LINKS AND REFERENCES */
+/* =============================================== */
+
+/* Page references with improved styling */
+.page-ref {
+    color: var(--flexoki-blue);
+    text-decoration: none;
+    border-radius: var(--flexoki-radius-sm);
+    padding: var(--flexoki-space-xs) var(--flexoki-space-sm);
+    background-color: var(--flexoki-blue-light);
+    border: 1px solid transparent;
+}
+
+.page-ref:hover {
+    background-color: var(--flexoki-blue);
+    color: var(--flexoki-background);
+    border-color: var(--flexoki-blue);
+    transform: translateY(-1px);
+    box-shadow: var(--flexoki-shadow-sm);
+}
+
+/* Page reference brackets */
+.page-reference .bracket {
+    color: var(--flexoki-text-tertiary);
+    font-weight: var(--flexoki-font-medium);
+}
+
+.page-reference:hover .bracket {
+    color: var(--flexoki-background);
+}
+
+/* General links */
+a {
+    color: var(--flexoki-blue);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+}
+
+a:hover {
+    color: var(--flexoki-blue);
+    border-bottom-color: var(--flexoki-blue);
+}
+
+/* Enhanced tag styling */
+a.tag {
+    background-color: var(--flexoki-purple-light);
+    color: var(--flexoki-purple);
+    padding: var(--flexoki-space-xs) var(--flexoki-space-md);
+    border-radius: var(--flexoki-radius-full);
+    font-size: var(--flexoki-text-sm);
+    font-weight: var(--flexoki-font-medium);
+    border: 1px solid var(--flexoki-purple);
+}
+
+a.tag:hover {
+    background-color: var(--flexoki-purple);
+    color: var(--flexoki-background);
+    transform: translateY(-1px);
+    box-shadow: var(--flexoki-shadow-sm);
+}
+
+/* Block references */
+.block-ref-wrap {
+    background-color: var(--flexoki-background-elevated);
+    border: 1px solid var(--flexoki-border-light);
+    border-radius: var(--flexoki-radius-md);
+    padding: var(--flexoki-space-md);
+    margin: var(--flexoki-space-sm) 0;
+}
+
+.block-ref-wrap:hover {
+    border-color: var(--flexoki-border);
+    box-shadow: var(--flexoki-shadow-sm);
+}
+
+/* =============================================== */
+/* BLOCK AND BULLET STYLES */
+/* =============================================== */
+
+/* Enhanced bullet points */
+.bullet-container .bullet {
+    background: linear-gradient(135deg, var(--flexoki-cyan), var(--flexoki-blue));
+    border-radius: var(--flexoki-radius-full);
+    box-shadow: var(--flexoki-shadow-sm);
+    transition: all var(--flexoki-transition-base);
+}
+
+.bullet-container:hover .bullet {
+    background: linear-gradient(135deg, var(--flexoki-blue), var(--flexoki-purple));
+    transform: scale(1.1);
+    box-shadow: var(--flexoki-shadow-md);
+}
+
+.bullet-container .bullet.selected {
+    background: var(--flexoki-orange);
+    box-shadow: 0 0 0 3px var(--flexoki-orange-light);
+}
+
+/* Block selection */
+.ls-block.selected {
+    background-color: var(--flexoki-blue-light);
+    border-radius: var(--flexoki-radius-md);
+    padding: var(--flexoki-space-sm);
+}
+
+/* Block borders */
+.block-children-left-border {
+    border-left: 2px solid var(--flexoki-border-light);
+    transition: border-color var(--flexoki-transition-base);
+}
+
+.block-children-left-border:hover {
+    border-left-color: var(--flexoki-cyan);
+}
+
+/* =============================================== */
+/* FORM ELEMENTS */
+/* =============================================== */
+
+/* Enhanced checkboxes */
+.form-checkbox {
+    appearance: none;
+    background-color: var(--flexoki-background-elevated);
+    border: 2px solid var(--flexoki-border);
+    border-radius: var(--flexoki-radius-sm);
+    width: 18px;
+    height: 18px;
+    position: relative;
+    cursor: pointer;
+}
+
+.form-checkbox:checked {
+    background-color: var(--flexoki-green);
+    border-color: var(--flexoki-green);
+}
+
+.form-checkbox:checked::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--flexoki-background);
+    font-size: 12px;
+    font-weight: var(--flexoki-font-bold);
+}
+
+/* Improved form inputs */
+.form-input,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+    background-color: var(--flexoki-background-elevated);
+    border: 1px solid var(--flexoki-border);
+    border-radius: var(--flexoki-radius-md);
+    color: var(--flexoki-text-primary);
+    padding: var(--flexoki-space-md) var(--flexoki-space-lg);
+    font-family: inherit;
+    font-size: var(--flexoki-text-base);
+    line-height: 1.5;
+}
+
+.form-input:focus,
+input:focus,
+textarea:focus {
+    border-color: var(--flexoki-border-focus);
+    box-shadow: 0 0 0 3px var(--flexoki-blue-light);
+    background-color: var(--flexoki-background);
+}
+
+/* =============================================== */
+/* BUTTON STYLES */
+/* =============================================== */
+
+/* Enhanced button styling */
+button.ui__button {
+    background-color: var(--flexoki-background-elevated);
+    border: 1px solid var(--flexoki-border);
+    border-radius: var(--flexoki-radius-md);
+    color: var(--flexoki-text-primary);
+    padding: var(--flexoki-space-md) var(--flexoki-space-xl);
+    font-weight: var(--flexoki-font-medium);
+    font-size: var(--flexoki-text-sm);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--flexoki-space-md);
+}
+
+button.ui__button:hover {
+    background-color: var(--flexoki-background-elevated-secondary);
+    border-color: var(--flexoki-border);
+    transform: translateY(-1px);
+    box-shadow: var(--flexoki-shadow-sm);
+}
+
+button.ui__button:focus {
+    border-color: var(--flexoki-border-focus);
+    box-shadow: 0 0 0 3px var(--flexoki-blue-light);
+}
+
+/* Primary button variant */
+button.ui__button.ui__button-theme-color {
+    background-color: var(--flexoki-blue);
+    border-color: var(--flexoki-blue);
+    color: var(--flexoki-background);
+}
+
+button.ui__button.ui__button-theme-color:hover {
+    background-color: var(--flexoki-purple);
+    border-color: var(--flexoki-purple);
+    box-shadow: var(--flexoki-shadow-md);
+}
+
+/* =============================================== */
+/* MODAL AND OVERLAY STYLES */
+/* =============================================== */
+
+/* Command palette */
+.cp__cmdk {
+    background-color: var(--flexoki-background-elevated);
+    border: 1px solid var(--flexoki-border);
+    border-radius: var(--flexoki-radius-lg);
+    box-shadow: var(--flexoki-shadow-xl);
+    backdrop-filter: blur(12px);
+}
+
+.cp__cmdk .search-results > div:hover {
+    background-color: var(--flexoki-background-quaternary);
+    border-radius: var(--flexoki-radius-sm);
+}
+
+.cp__cmdk .ui__list-item-highlighted-span {
+    background-color: var(--flexoki-yellow-light);
+    color: var(--flexoki-text-primary);
+    border-radius: var(--flexoki-radius-sm);
+    padding: var(--flexoki-space-xs);
+}
+
+/* Modal panels */
+.ui__modal-panel {
+    background-color: var(--flexoki-background-elevated);
+    border: 1px solid var(--flexoki-border);
+    border-radius: var(--flexoki-radius-lg);
+    box-shadow: var(--flexoki-shadow-xl);
+}
+
+/* =============================================== */
+/* CODE BLOCKS AND SYNTAX HIGHLIGHTING */
+/* =============================================== */
+
+.CodeMirror {
+    background-color: var(--flexoki-background-secondary);
+    color: var(--flexoki-text-secondary);
+    border-radius: var(--flexoki-radius-md);
+    border: 1px solid var(--flexoki-border-light);
+    font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', Consolas, monospace;
+    font-size: var(--flexoki-text-sm);
+    line-height: 1.6;
+}
+
+.CodeMirror .CodeMirror-cursor {
+    border-left: 2px solid var(--flexoki-blue);
+}
+
+.CodeMirror .CodeMirror-selected {
+    background: var(--flexoki-cyan-light);
+}
+
+/* Syntax highlighting */
+.CodeMirror .cm-keyword {
+    color: var(--flexoki-red);
+    font-weight: var(--flexoki-font-medium);
+}
+
+.CodeMirror .cm-string,
+.CodeMirror .cm-string-2 {
+    color: var(--flexoki-green);
+}
+
+.CodeMirror .cm-number {
+    color: var(--flexoki-orange);
+}
+
+.CodeMirror .cm-comment {
+    color: var(--flexoki-text-quaternary);
+    font-style: italic;
+}
+
+.CodeMirror .cm-variable {
+    color: var(--flexoki-blue);
+}
+
+.CodeMirror .cm-property {
+    color: var(--flexoki-cyan);
+}
+
+.CodeMirror .cm-builtin {
+    color: var(--flexoki-purple);
+}
+
+.CodeMirror .cm-meta {
+    color: var(--flexoki-yellow);
+}
+
+/* =============================================== */
+/* PROPERTIES AND METADATA */
+/* =============================================== */
+
+.page-properties,
+.block-properties {
+    background-color: var(--flexoki-background-elevated);
+    border: 1px solid var(--flexoki-border-light);
+    border-radius: var(--flexoki-radius-md);
+    padding: var(--flexoki-space-lg);
+    margin: var(--flexoki-space-lg) 0;
+}
+
+.page-property-key {
+    color: var(--flexoki-text-secondary);
+    font-weight: var(--flexoki-font-medium);
+    font-size: var(--flexoki-text-sm);
+}
+
+.page-property-key:hover {
+    color: var(--flexoki-blue);
+}
+
+/* =============================================== */
+/* TASK MARKERS AND PRIORITIES */
+/* =============================================== */
+
+.marker-switch {
+    background-color: var(--flexoki-background-elevated-tertiary);
+    color: var(--flexoki-text-tertiary);
+    border-radius: var(--flexoki-radius-sm);
+    padding: var(--flexoki-space-xs) var(--flexoki-space-md);
+    font-size: var(--flexoki-text-xs);
+    font-weight: var(--flexoki-font-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.marker-switch:hover {
+    background-color: var(--flexoki-background-elevated-secondary);
+    color: var(--flexoki-text-secondary);
+}
+
+/* Priority markers with enhanced styling */
+a.priority {
+    font-size: 0;
+    color: transparent;
+    display: inline-block;
+}
+
+a.priority::before {
+    font-size: var(--flexoki-text-xs);
+    padding: var(--flexoki-space-xs) var(--flexoki-space-sm);
+    border-radius: var(--flexoki-radius-sm);
+    position: relative;
+    color: var(--flexoki-background);
+    font-weight: var(--flexoki-font-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+a.priority[href="#/page/A" i]::before {
+    content: "HIGH";
+    background-color: var(--flexoki-red);
+}
+
+a.priority[href="#/page/B" i]::before {
+    content: "MED";
+    background-color: var(--flexoki-yellow);
+}
+
+a.priority[href="#/page/C" i]::before {
+    content: "LOW";
+    background-color: var(--flexoki-green);
+}
+
+/* =============================================== */
+/* SCROLLBARS */
+/* =============================================== */
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--flexoki-background-elevated);
+    border-radius: var(--flexoki-radius-sm);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--flexoki-text-quaternary);
+    border-radius: var(--flexoki-radius-sm);
+    border: 2px solid var(--flexoki-background-elevated);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--flexoki-text-tertiary);
+}
+
+::-webkit-scrollbar-corner {
+    background: var(--flexoki-background-elevated);
+}
+
+/* =============================================== */
+/* TABLE STYLES */
+/* =============================================== */
+
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    margin: var(--flexoki-space-lg) 0;
+    border-radius: var(--flexoki-radius-md);
+    overflow: hidden;
+    box-shadow: var(--flexoki-shadow-sm);
+}
+
+table th,
+table td {
+    border: 1px solid var(--flexoki-border-light);
+    padding: var(--flexoki-space-md) var(--flexoki-space-lg);
+    text-align: left;
+    border-right: none;
+    border-bottom: none;
+}
+
+table th:last-child,
+table td:last-child {
+    border-right: 1px solid var(--flexoki-border-light);
+}
+
+table tr:last-child th,
+table tr:last-child td {
+    border-bottom: 1px solid var(--flexoki-border-light);
+}
+
+table th {
+    background-color: var(--flexoki-background-elevated);
+    font-weight: var(--flexoki-font-semibold);
+    color: var(--flexoki-text-primary);
+    font-size: var(--flexoki-text-sm);
+}
+
+table tr:nth-child(even) {
+    background-color: var(--flexoki-background-quaternary);
+}
+
+table tr:hover {
+    background-color: var(--flexoki-background-elevated);
+}
+
+/* =============================================== */
+/* NOTIFICATIONS AND ALERTS */
+/* =============================================== */
+
+.ui__notifications .notification-area {
+    background-color: var(--flexoki-background-elevated);
+    border: 1px solid var(--flexoki-border);
+    border-radius: var(--flexoki-radius-lg);
+    box-shadow: var(--flexoki-shadow-lg);
+    backdrop-filter: blur(8px);
+}
+
+/* =============================================== */
+/* DATE PICKER */
+/* =============================================== */
+
+.datepicker {
+    background: var(--flexoki-background-elevated);
+    border: 1px solid var(--flexoki-border);
+    border-radius: var(--flexoki-radius-lg);
+    box-shadow: var(--flexoki-shadow-lg);
+}
+
+.datepicker td.available:hover {
+    background-color: var(--flexoki-blue-light);
+    border-radius: var(--flexoki-radius-sm);
+}
+
+.datepicker td.active {
+    background-color: var(--flexoki-blue);
+    color: var(--flexoki-background);
+    border-radius: var(--flexoki-radius-sm);
+}
+
+/* =============================================== */
+/* PROGRESS BARS */
+/* =============================================== */
+
+.ui__loading-bar {
+    background-color: var(--flexoki-background-elevated);
+    border-radius: var(--flexoki-radius-full);
+    overflow: hidden;
+}
+
+.ui__loading-bar .progress {
+    background: linear-gradient(90deg, var(--flexoki-blue), var(--flexoki-cyan));
+    border-radius: var(--flexoki-radius-full);
+}
+
+/* =============================================== */
+/* UTILITY CLASSES */
+/* =============================================== */
+
+/* Background utilities */
+.flexoki-bg-primary { background-color: var(--flexoki-background); }
+.flexoki-bg-secondary { background-color: var(--flexoki-background-secondary); }
+.flexoki-bg-elevated { background-color: var(--flexoki-background-elevated); }
+.flexoki-bg-hover { background-color: var(--flexoki-background-elevated); }
+
+/* Text utilities */
+.flexoki-text-primary { color: var(--flexoki-text-primary); }
+.flexoki-text-secondary { color: var(--flexoki-text-secondary); }
+.flexoki-text-tertiary { color: var(--flexoki-text-tertiary); }
+.flexoki-text-accent { color: var(--flexoki-cyan); }
+
+/* Border utilities */
+.flexoki-border { border: 1px solid var(--flexoki-border); }
+.flexoki-border-light { border: 1px solid var(--flexoki-border-light); }
+.flexoki-border-focus { border: 1px solid var(--flexoki-border-focus); }
+
+/* Spacing utilities */
+.flexoki-p-sm { padding: var(--flexoki-space-sm); }
+.flexoki-p-md { padding: var(--flexoki-space-md); }
+.flexoki-p-lg { padding: var(--flexoki-space-lg); }
+.flexoki-m-sm { margin: var(--flexoki-space-sm); }
+.flexoki-m-md { margin: var(--flexoki-space-md); }
+.flexoki-m-lg { margin: var(--flexoki-space-lg); }
+
+/* Radius utilities */
+.flexoki-rounded-sm { border-radius: var(--flexoki-radius-sm); }
+.flexoki-rounded-md { border-radius: var(--flexoki-radius-md); }
+.flexoki-rounded-lg { border-radius: var(--flexoki-radius-lg); }
+
+/* Shadow utilities */
+.flexoki-shadow-sm { box-shadow: var(--flexoki-shadow-sm); }
+.flexoki-shadow-md { box-shadow: var(--flexoki-shadow-md); }
+.flexoki-shadow-lg { box-shadow: var(--flexoki-shadow-lg); }
 
 /* =============================================== */
 /* LOGSEQ VARIABLE MAPPINGS */
@@ -127,19 +1046,19 @@ html[data-theme=dark] {
     /* Font */
     --ls-font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     --ls-main-content-max-width: 900px;
-    --ls-tag-text-opacity: 0.6;
-    --ls-tag-text-hover-opacity: 0.8;
+    --ls-tag-text-opacity: 0.8;
+    --ls-tag-text-hover-opacity: 1;
 
     /* Background Colors */
     --ls-primary-background-color: var(--flexoki-background);
-    --ls-secondary-background-color: var(--flexoki-background-4);
-    --ls-tertiary-background-color: var(--flexoki-background-5);
-    --ls-quaternary-background-color: var(--flexoki-background-7);
+    --ls-secondary-background-color: var(--flexoki-background-quaternary);
+    --ls-tertiary-background-color: var(--flexoki-background-elevated);
+    --ls-quaternary-background-color: var(--flexoki-background-elevated-tertiary);
 
     /* Text Colors */
     --ls-primary-text-color: var(--flexoki-text-primary);
     --ls-secondary-text-color: var(--flexoki-text-secondary);
-    --ls-title-text-color: var(--flexoki-text-secondary);
+    --ls-title-text-color: var(--flexoki-text-primary);
 
     /* Border Colors */
     --ls-border-color: var(--flexoki-border-light);
@@ -149,29 +1068,29 @@ html[data-theme=dark] {
     /* Link Colors */
     --ls-link-text-color: var(--flexoki-blue);
     --ls-link-text-hover-color: var(--flexoki-cyan);
-    --ls-link-ref-text-color: var(--flexoki-purple);
-    --ls-link-ref-text-hover-color: var(--flexoki-pink);
+    --ls-link-ref-text-color: var(--flexoki-blue);
+    --ls-link-ref-text-hover-color: var(--flexoki-purple);
 
     /* Tag Colors */
     --ls-tag-text-color: var(--flexoki-purple);
     --ls-tag-text-hover-color: var(--flexoki-pink);
 
     /* Selection */
-    --ls-selection-background-color: hsl(var(--flexoki-blue-hsl), 0.3);
+    --ls-selection-background-color: var(--flexoki-blue-light);
     --ls-selection-text-color: var(--flexoki-text-primary);
 
     /* Code */
-    --ls-page-inline-code-color: var(--flexoki-text-primary);
-    --ls-page-inline-code-bg-color: var(--flexoki-background-6);
+    --ls-page-inline-code-color: var(--flexoki-cyan);
+    --ls-page-inline-code-bg-color: var(--flexoki-background-elevated);
 
     /* Block Quote */
-    --ls-page-blockquote-color: var(--flexoki-text-primary);
-    --ls-page-blockquote-bg-color: var(--flexoki-background-4);
-    --ls-page-blockquote-border-color: var(--flexoki-orange);
+    --ls-page-blockquote-color: var(--flexoki-text-secondary);
+    --ls-page-blockquote-bg-color: var(--flexoki-blue-light);
+    --ls-page-blockquote-border-color: var(--flexoki-blue);
 
     /* Bullets */
-    --ls-block-bullet-color: var(--flexoki-text-quaternary);
-    --ls-block-bullet-border-color: hsl(var(--flexoki-text-secondary), 0.25);
+    --ls-block-bullet-color: var(--flexoki-cyan);
+    --ls-block-bullet-border-color: var(--flexoki-border);
 
     /* Highlights */
     --ls-highlight-color-gray: var(--flexoki-base-60);
@@ -184,14 +1103,14 @@ html[data-theme=dark] {
 
     /* Mark/Highlight */
     --ls-page-mark-color: var(--flexoki-text-primary);
-    --ls-page-mark-bg-color: hsl(var(--flexoki-yellow-hsl), 0.4);
+    --ls-page-mark-bg-color: var(--flexoki-yellow-light);
 
     /* Block highlight */
-    --ls-block-highlight-color: hsl(var(--flexoki-cyan-hsl), 0.2);
+    --ls-block-highlight-color: var(--flexoki-blue-light);
 
     /* Menu & Header */
-    --ls-header-button-background: var(--flexoki-text-quaternary);
-    --ls-menu-hover-color: var(--flexoki-background-6);
+    --ls-header-button-background: var(--flexoki-background-elevated);
+    --ls-menu-hover-color: var(--flexoki-background-elevated);
 
     /* Icon */
     --ls-icon-color: var(--flexoki-text-quaternary);
@@ -202,9 +1121,9 @@ html[data-theme=dark] {
     --ls-success-text-color: var(--flexoki-green);
 
     /* Scrollbar */
-    --ls-scrollbar-foreground-color: hsl(var(--flexoki-text-quaternary), 0.5);
-    --ls-scrollbar-background-color: hsl(var(--flexoki-text-quaternary), 0.1);
-    --ls-scrollbar-thumb-hover-color: hsl(var(--flexoki-text-quaternary), 0.8);
+    --ls-scrollbar-foreground-color: var(--flexoki-text-quaternary);
+    --ls-scrollbar-background-color: var(--flexoki-background-elevated);
+    --ls-scrollbar-thumb-hover-color: var(--flexoki-text-tertiary);
 
     /* Search */
     --ls-search-icon-color: var(--flexoki-blue);
@@ -213,19 +1132,19 @@ html[data-theme=dark] {
     --ls-cloze-text-color: var(--flexoki-purple);
 
     /* Properties */
-    --ls-page-properties-background-color: var(--flexoki-background-3);
-    --ls-block-properties-background-color: var(--flexoki-background-3);
+    --ls-page-properties-background-color: var(--flexoki-background-elevated);
+    --ls-block-properties-background-color: var(--flexoki-background-elevated);
 
     /* Table */
-    --ls-table-tr-even-background-color: var(--flexoki-background-3);
+    --ls-table-tr-even-background-color: var(--flexoki-background-quaternary);
 
     /* Checkbox */
-    --ls-page-checkbox-color: var(--flexoki-cyan);
-    --ls-page-checkbox-border-color: var(--flexoki-background);
+    --ls-page-checkbox-color: var(--flexoki-green);
+    --ls-page-checkbox-border-color: var(--flexoki-border);
 
     /* Task marker */
     --ls-marker-text-color: var(--flexoki-text-tertiary);
-    --ls-marker-text-bg-color: var(--flexoki-background-7);
+    --ls-marker-text-bg-color: var(--flexoki-background-elevated-tertiary);
 
     /* Active/Focus colors */
     --ls-active-primary-color: var(--flexoki-blue);
@@ -235,560 +1154,103 @@ html[data-theme=dark] {
     --ls-guideline-color: var(--flexoki-border);
 
     /* Block ref */
-    --ls-block-ref-link-text-color: var(--flexoki-purple);
+    --ls-block-ref-link-text-color: var(--flexoki-blue);
 
     /* Embedded block levels */
-    --color-level-1: var(--flexoki-background-3);
-    --color-level-2: var(--flexoki-background-4);
-    --color-level-3: var(--flexoki-background-5);
-    --color-level-4: var(--flexoki-background-6);
-    --color-level-5: var(--flexoki-background-7);
-    --color-level-6: var(--flexoki-background-8);
+    --color-level-1: var(--flexoki-background-tertiary);
+    --color-level-2: var(--flexoki-background-quaternary);
+    --color-level-3: var(--flexoki-background-elevated);
+    --color-level-4: var(--flexoki-background-elevated-secondary);
+    --color-level-5: var(--flexoki-background-elevated-tertiary);
+    --color-level-6: var(--flexoki-background-muted);
 }
 
 /* =============================================== */
-/* GLOBAL STYLES */
+/* RESPONSIVE DESIGN */
 /* =============================================== */
 
-:root {
-    --flexoki-shadow-light: rgba(255, 255, 255, 0.1);
-    --flexoki-shadow-dark: rgba(0, 0, 0, 0.1);
-    --flexoki-shadow-medium: rgba(0, 0, 0, 0.2);
+/* Mobile devices */
+@media (max-width: 640px) {
+    :root {
+        --flexoki-space-lg: 12px;
+        --flexoki-space-xl: 16px;
+        --flexoki-space-2xl: 20px;
+    }
+    
+    h1.page-title {
+        font-size: var(--flexoki-text-2xl);
+    }
+    
+    .editor-inner .uniline-block.h1,
+    .ls-block h1 {
+        font-size: var(--flexoki-text-xl);
+    }
+    
+    button.ui__button {
+        padding: var(--flexoki-space-sm) var(--flexoki-space-lg);
+        font-size: var(--flexoki-text-xs);
+    }
 }
 
-/* Background pattern */
-#app-container {
-    background-image: radial-gradient(
-        var(--flexoki-border-lighter) 5%,
-        var(--flexoki-background) 5%
-    );
-    background-position: 0 0;
-    background-size: 25px 25px;
+/* Tablet devices */
+@media (min-width: 641px) and (max-width: 1024px) {
+    #app-container {
+        background-size: 20px 20px;
+    }
 }
 
-body[data-page=whiteboard] #app-container {
-    background-image: none;
-}
-
-/* Selection */
-::selection {
-    background-color: var(--ls-selection-background-color) !important;
-    color: var(--ls-selection-text-color) !important;
-}
-
-/* =============================================== */
-/* SIDEBAR STYLES */
-/* =============================================== */
-
-/* Left Sidebar */
-#left-sidebar > .left-sidebar-inner {
-    background-color: var(--flexoki-background-2);
-}
-
-#left-sidebar a.item .ui__icon,
-#left-sidebar .header a .ui__icon {
-    color: var(--flexoki-cyan);
-}
-
-#left-sidebar a.item,
-#left-sidebar .header a {
-    color: var(--flexoki-text-primary);
-}
-
-#left-sidebar a.item:hover,
-#left-sidebar .header:hover,
-#left-sidebar .favorite-item a:hover,
-#left-sidebar .recent-item a:hover {
-    background-color: var(--ls-menu-hover-color);
-}
-
-/* Right Sidebar */
-#right-sidebar .cp__right-sidebar-inner {
-    background-color: var(--flexoki-background-2);
-    border-left: 1px solid var(--ls-border-color);
-}
-
-#right-sidebar .sidebar-item .sidebar-item-header {
-    background: linear-gradient(0deg, var(--flexoki-background-4), var(--flexoki-background-3));
-}
-
-#right-sidebar .sidebar-item.collapsed .sidebar-item-header {
-    background: var(--flexoki-background-3);
+/* Large screens */
+@media (min-width: 1280px) {
+    #app-container {
+        background-size: 30px 30px;
+    }
 }
 
 /* =============================================== */
-/* TEXT & CONTENT STYLES */
+/* THEME NAMESPACE */
 /* =============================================== */
 
-/* Page title */
-h1.page-title {
-    color: var(--ls-title-text-color);
-    font-weight: 700;
-}
-
-/* Headings */
-.editor-inner .uniline-block.h1,
-.ls-block h1 {
-    border-bottom-color: var(--ls-guideline-color);
-    font-size: 2em;
-    font-weight: 600;
-}
-
-.editor-inner .uniline-block.h2,
-.ls-block h2 {
-    border-bottom-color: var(--ls-guideline-color);
-    font-size: 1.6em;
-    font-weight: 600;
-}
-
-.editor-inner .uniline-block.h3,
-.ls-block h3 {
-    font-size: 1.3em;
-    font-weight: 600;
-}
-
-.editor-inner .uniline-block.h4,
-.ls-block h4 {
-    font-size: 1.1em;
-    font-weight: 600;
-}
-
-.editor-inner .uniline-block.h5,
-.ls-block h5 {
-    font-size: 1em;
-    font-weight: 600;
-}
-
-.editor-inner .uniline-block.h6,
-.ls-block h6 {
-    font-size: 1em;
-    font-weight: 500;
-}
-
-/* Text emphasis */
-b, strong {
-    color: var(--flexoki-text-secondary);
-}
-
-i {
-    color: var(--flexoki-text-secondary);
-    font-weight: 500;
-}
-
-/* Mark/Highlight */
-mark {
-    border-radius: 3px;
-    padding: 3px 5px;
-    background-color: var(--ls-page-mark-bg-color);
-    color: var(--ls-page-mark-color);
-}
-
-/* Code */
-code {
-    background-color: var(--ls-page-inline-code-bg-color);
-    color: var(--ls-page-inline-code-color);
-    padding: 2px 4px;
-    border-radius: 3px;
-}
-
-/* Block quote */
-blockquote {
-    border-left: 4px solid var(--ls-page-blockquote-border-color);
-    background-color: var(--ls-page-blockquote-bg-color);
-    padding: 10px 15px;
-    margin: 10px 0;
-    border-radius: 0 4px 4px 0;
+/* Flexoki theme namespace to prevent plugin conflicts */
+.flexoki-theme {
+    /* All theme styles are contained within this namespace */
+    /* Plugins can safely override without affecting the theme */
 }
 
 /* =============================================== */
-/* LINKS & REFERENCES */
+/* ACCESSIBILITY ENHANCEMENTS */
 /* =============================================== */
 
-/* Page references */
-.page-ref {
-    color: var(--ls-link-ref-text-color);
-}
-
-.page-ref:hover {
-    color: var(--ls-link-ref-text-hover-color);
-}
-
-.page-reference .bracket {
-    opacity: 0.5;
-    color: var(--flexoki-text-quaternary);
-}
-
-.page-reference:hover {
-    background: hsl(var(--flexoki-purple-hsl), 0.1);
-    border-radius: 3px;
-}
-
-/* External links */
-a {
-    color: var(--ls-link-text-color);
-    text-decoration: none;
-}
-
-a:hover {
-    color: var(--ls-link-text-hover-color);
-    text-decoration: underline;
-}
-
-/* Tags */
-a.tag {
-    color: var(--ls-tag-text-color);
-    opacity: var(--ls-tag-text-opacity);
-}
-
-a.tag:hover {
-    color: var(--ls-tag-text-hover-color);
-    opacity: var(--ls-tag-text-hover-opacity);
-    text-decoration: none;
-}
-
-/* Block references */
-.block-ref-wrap {
-    border-bottom: none;
-    padding: 2px 5px;
-    border-radius: 3px;
-    background: hsl(var(--flexoki-cyan-hsl), 0.15);
-}
-
-.block-ref-wrap:hover {
-    background: hsl(var(--flexoki-cyan-hsl), 0.25);
-}
-
-/* =============================================== */
-/* BLOCKS & BULLETS */
-/* =============================================== */
-
-/* Bullets */
-.bullet-container .bullet {
-    background-color: var(--ls-block-bullet-color);
-}
-
-.bullet-container:hover .bullet {
-    background-color: var(--flexoki-blue);
-}
-
-.bullet-container .bullet.selected {
-    background-color: var(--flexoki-purple);
-}
-
-/* Block highlighting */
-.ls-block.selected {
-    background-color: var(--ls-block-highlight-color);
-    border-radius: 4px;
-}
-
-/* Guidelines */
-.block-children-left-border {
-    opacity: 1;
-    border-left-color: var(--ls-guideline-color);
-}
-
-.block-children-left-border:hover {
-    background-color: hsl(var(--flexoki-cyan-hsl), 0.1);
-}
-
-/* =============================================== */
-/* FORMS & INPUTS */
-/* =============================================== */
-
-/* Checkboxes */
-.form-checkbox {
-    border-radius: 2px;
-    border-color: var(--ls-page-checkbox-border-color);
-    background-color: var(--ls-page-checkbox-color);
-}
-
-.form-checkbox:checked {
-    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 16 16' fill='%23FFFFFF' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.207 4.793a1 1 0 0 1 0 1.414l-5 5a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L6.5 9.086l4.293-4.293a1 1 0 0 1 1.414 0z'/%3E%3C/svg%3E");
-}
-
-/* Form inputs */
-.form-input,
-input[type="text"],
-input[type="email"],
-input[type="password"],
-textarea {
-    background-color: var(--ls-primary-background-color);
-    border-color: var(--ls-border-color);
-    color: var(--ls-primary-text-color);
-    border-radius: 4px;
-}
-
-.form-input:focus,
-input:focus,
-textarea:focus {
-    border-color: var(--flexoki-blue);
-    box-shadow: 0 0 0 2px hsl(var(--flexoki-blue-hsl), 0.2);
-}
-
-/* =============================================== */
-/* BUTTONS & CONTROLS */
-/* =============================================== */
-
-/* General buttons */
-button.ui__button {
-    background-color: var(--flexoki-background-4);
-    color: var(--flexoki-text-primary);
-    border: 1px solid var(--ls-border-color);
-    border-radius: 4px;
-    padding: 6px 12px;
-}
-
-button.ui__button:hover {
-    background-color: var(--flexoki-background-5);
-    border-color: var(--flexoki-blue);
-}
-
-button.ui__button:focus {
-    border-color: var(--flexoki-blue);
-    box-shadow: 0 0 0 2px hsl(var(--flexoki-blue-hsl), 0.2);
-}
-
-/* Primary buttons */
-button.ui__button.ui__button-theme-color {
-    background-color: var(--flexoki-blue);
-    color: var(--flexoki-background);
-    border-color: var(--flexoki-blue);
-}
-
-button.ui__button.ui__button-theme-color:hover {
-    background-color: var(--flexoki-cyan);
-    border-color: var(--flexoki-cyan);
-}
-
-/* =============================================== */
-/* SEARCH & MODALS */
-/* =============================================== */
-
-/* Search modal */
-.cp__cmdk {
-    background-color: var(--flexoki-background-2);
-    border: 1px solid var(--ls-border-color);
-    border-radius: 8px;
-}
-
-.cp__cmdk .search-results > div:hover {
-    background-color: var(--flexoki-background-4);
-}
-
-.cp__cmdk .ui__list-item-highlighted-span {
-    background-color: var(--ls-page-mark-bg-color);
-    color: var(--flexoki-text-primary);
-}
-
-/* Modal panels */
-.ui__modal-panel {
-    background-color: var(--ls-primary-background-color);
-    border: 1px solid var(--ls-border-color);
-    border-radius: 8px;
-}
-
-/* =============================================== */
-/* CODE BLOCKS */
-/* =============================================== */
-
-.CodeMirror {
-    color: var(--flexoki-text-secondary);
-    background-color: var(--flexoki-background-2);
-    border-radius: 4px;
-}
-
-.CodeMirror .CodeMirror-cursor {
-    border-left: solid thin var(--flexoki-blue);
-}
-
-.CodeMirror .CodeMirror-selected {
-    background: hsl(var(--flexoki-cyan-hsl), 0.2);
-}
-
-.CodeMirror .cm-keyword {
-    color: var(--flexoki-red);
-}
-
-.CodeMirror .cm-string,
-.CodeMirror .cm-string-2 {
-    color: var(--flexoki-yellow);
-}
-
-.CodeMirror .cm-number {
-    color: var(--flexoki-pink);
-}
-
-.CodeMirror .cm-comment {
-    color: var(--flexoki-text-quaternary);
-    font-style: italic;
-}
-
-.CodeMirror .cm-variable {
-    color: var(--flexoki-purple);
-}
-
-.CodeMirror .cm-property {
-    color: var(--flexoki-blue);
-}
-
-.CodeMirror .cm-builtin {
-    color: var(--flexoki-cyan);
-}
-
-.CodeMirror .cm-meta {
-    color: var(--flexoki-green);
-}
-
-/* =============================================== */
-/* PROPERTIES & METADATA */
-/* =============================================== */
-
-.page-properties,
-.block-properties {
-    background-color: var(--ls-page-properties-background-color);
-    border-radius: 4px;
-    padding: 10px;
-    margin: 10px 0;
-}
-
-.page-property-key {
-    color: var(--flexoki-text-secondary);
-    font-weight: 500;
-}
-
-.page-property-key:hover {
-    color: var(--flexoki-blue);
-}
-
-/* =============================================== */
-/* TASK & MARKERS */
-/* =============================================== */
-
-.marker-switch {
-    background-color: var(--ls-marker-text-bg-color);
-    color: var(--ls-marker-text-color);
-    border-radius: 3px;
-    padding: 2px 6px;
-    font-size: 0.8em;
-}
-
-.marker-switch:hover {
-    background-color: var(--flexoki-background-7);
-}
-
-/* Priority markers */
-a.priority {
-    font-size: 0;
-    color: transparent;
-}
-
-a.priority::before {
-    font-family: 'tabler-icons';
-    font-size: 11px;
-    padding: 2px;
-    border-radius: 2px;
-    position: relative;
-    color: var(--flexoki-background);
-}
-
-a.priority[href="#/page/A" i]::before {
-    content: "!";
-    background-color: var(--flexoki-red);
-}
-
-a.priority[href="#/page/B" i]::before {
-    content: "!!";
-    background-color: var(--flexoki-yellow);
-}
-
-a.priority[href="#/page/C" i]::before {
-    content: "!!!";
-    background-color: var(--flexoki-blue);
-}
-
-/* =============================================== */
-/* SCROLLBARS */
-/* =============================================== */
-
-::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--ls-scrollbar-background-color);
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--ls-scrollbar-foreground-color);
-    border-radius: 3px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--ls-scrollbar-thumb-hover-color);
-}
-
-/* =============================================== */
-/* RESPONSIVE & MISC */
-/* =============================================== */
-
-/* Disable animations for better performance */
-.left-sidebar-inner *,
-.cp__header * {
-    transition: none !important;
-}
-
-/* Table styling */
-table {
-    border-collapse: collapse;
-    width: 100%;
-    margin: 10px 0;
-}
-
-table th,
-table td {
-    border: 1px solid var(--ls-border-color);
-    padding: 8px 12px;
-    text-align: left;
-}
-
-table th {
-    background-color: var(--flexoki-background-3);
-    font-weight: 600;
-}
-
-table tr:nth-child(even) {
-    background-color: var(--ls-table-tr-even-background-color);
-}
-
-/* Notifications */
-.ui__notifications .notification-area {
-    background-color: var(--flexoki-background-2);
-    border: 1px solid var(--ls-border-color);
-    border-radius: 6px;
-}
-
-/* Date picker */
-.datepicker {
-    background: var(--ls-primary-background-color);
-    border: 1px solid var(--ls-border-color);
-    border-radius: 6px;
-}
-
-.datepicker td.available:hover {
-    background-color: hsl(var(--flexoki-blue-hsl), 0.1);
-}
-
-.datepicker td.active {
-    background-color: var(--flexoki-blue);
-    color: var(--flexoki-background);
-}
-
-/* Progress bars */
-.ui__loading-bar {
-    background-color: var(--flexoki-background-4);
-}
-
-.ui__loading-bar .progress {
-    background-color: var(--flexoki-blue);
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --flexoki-border: var(--flexoki-text-tertiary);
+        --flexoki-border-light: var(--flexoki-text-quaternary);
+    }
+}
+
+/* Print styles */
+@media print {
+    #app-container {
+        background-image: none !important;
+    }
+    
+    * {
+        transition: none !important;
+        animation: none !important;
+        box-shadow: none !important;
+    }
+}
+
+/* Dark mode preference override */
+@media (prefers-color-scheme: dark) {
+    .auto-theme {
+        /* Inherit dark theme variables when system is in dark mode */
+    }
+}
+
+/* Light mode preference override */
+@media (prefers-color-scheme: light) {
+    .auto-theme {
+        /* Inherit light theme variables when system is in light mode */
+    }
 }

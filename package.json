@@ -1,25 +1,59 @@
 {
   "name": "Flexoki Theme",
   "author": "Avelino",
-  "version": "1.0.0",
-  "description": "A beautiful, warm theme for Logseq inspired by Steph Ango's Flexoki color scheme",
+  "version": "2.0.0",
+  "description": "A beautifully crafted, accessible theme for Logseq inspired by Steph Ango's Flexoki color scheme. Enhanced with professional design system, accessibility features, and performance optimizations.",
+  "keywords": [
+    "logseq",
+    "theme",
+    "flexoki",
+    "accessibility",
+    "responsive",
+    "design-system",
+    "warm-colors",
+    "paper-like"
+  ],
+  "homepage": "https://github.com/avelino/flexoki-logseq",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/avelino/flexoki-logseq.git"
+  },
+  "bugs": {
+    "url": "https://github.com/avelino/flexoki-logseq/issues"
+  },
+  "license": "MIT",
   "logseq": {
     "id": "logseq-flexoki-theme",
-    "title": "Flexoki Theme",
+    "title": "Flexoki Theme v2.0",
     "icon": "./icon.svg",
     "themes": [
       {
         "name": "Flexoki Light",
         "url": "./flexoki-theme.css",
-        "description": "A beautiful, warm theme inspired by Flexoki color scheme with support for both light and dark modes",
+        "description": "Enhanced Flexoki theme with warm, paper-inspired colors for light mode. Features improved accessibility, responsive design, and professional typography.",
         "mode": "light"
       },
       {
-        "name": "Flexoki Dark",
+        "name": "Flexoki Dark", 
         "url": "./flexoki-theme.css",
-        "description": "A beautiful, warm theme inspired by Flexoki color scheme with support for both light and dark modes",
+        "description": "Enhanced Flexoki theme with warm, comfortable colors for dark mode. Features improved accessibility, responsive design, and professional typography.",
         "mode": "dark"
       }
+    ],
+    "features": [
+      "Dual theme support (light/dark)",
+      "WCAG 2.1 accessibility compliant",
+      "Responsive design for all devices",
+      "Enhanced typography with IBM Plex Sans",
+      "Comprehensive design token system",
+      "Performance optimized transitions",
+      "Plugin compatibility with safe namespacing",
+      "Reduced motion support",
+      "High contrast mode support",
+      "Mobile-first responsive design"
     ]
+  },
+  "engines": {
+    "logseq": ">=0.8.0"
   }
 }
