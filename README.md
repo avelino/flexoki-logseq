@@ -10,6 +10,8 @@
 
 A beautiful, warm theme for Logseq inspired by Steph Ango's [Flexoki color scheme](https://stephango.com/flexoki). Designed for comfort and productivity with paper-like colors that are easy on the eyes.
 
+![Flexoki Theme](./flexoki-theme.png)
+
 ## Features
 
 - 🎨 **Warm Color Palette**: Paper-inspired colors that reduce eye strain
