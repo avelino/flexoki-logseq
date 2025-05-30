@@ -557,12 +557,18 @@ a.tag:hover {
     border: 1px solid var(--flexoki-border-light);
     border-radius: var(--flexoki-radius-md);
     padding: var(--flexoki-space-md);
-    margin: var(--flexoki-space-sm) 0;
+    margin: var(--flexoki-space-lg) 0;
 }
 
 .block-ref-wrap:hover {
     border-color: var(--flexoki-border);
     box-shadow: var(--flexoki-shadow-sm);
+}
+
+.block-ref-wrap.inline {
+    display: inline-block;
+    margin: var(--flexoki-space-md) var(--flexoki-space-xs);
+    vertical-align: top;
 }
 
 /* =============================================== */
@@ -688,7 +694,8 @@ textarea {
 .form-input:focus,
 input:focus,
 textarea:focus {
-    border-color: var(--flexoki-border-focus);
+    /* commenting colored embroidery in the active line */
+    /* border-color: var(--flexoki-border-focus); */
     box-shadow: 0 0 0 3px var(--flexoki-blue-light);
     background-color: var(--flexoki-background);
 }
