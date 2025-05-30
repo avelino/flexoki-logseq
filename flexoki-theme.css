@@ -605,6 +605,38 @@ a.tag:hover {
     border-left-color: var(--flexoki-cyan);
 }
 
+/* Numbered lists styling */
+.bullet-container.as-order-list {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.bullet-container.as-order-list .bullet {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    color: var(--flexoki-text-secondary);
+    font-weight: var(--flexoki-font-medium);
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bullet-container.as-order-list:hover .bullet {
+    background: none !important;
+    transform: none !important;
+    box-shadow: none !important;
+    color: var(--flexoki-text-primary);
+}
+
+.bullet-container.as-order-list .bullet.selected {
+    background: none !important;
+    box-shadow: none !important;
+    color: var(--flexoki-orange);
+}
+
 /* =============================================== */
 /* FORM ELEMENTS */
 /* =============================================== */
