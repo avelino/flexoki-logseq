@@ -1025,6 +1025,27 @@ table tr:hover {
 /* PROGRESS BARS */
 /* =============================================== */
 
+progress {
+    vertical-align: middle;
+    border-radius: var(--flexoki-radius-md);
+    height: var(--flexoki-text-lg);
+    width: 100px;
+    border: 1px solid var(--flexoki-border);
+    overflow: hidden;
+}
+  
+progress::-webkit-progress-bar {
+    background: var(--flexoki-background-elevated-secondary);
+}
+  
+progress::-webkit-progress-value {
+    background: var(--flexoki-blue);
+}
+
+/* =============================================== */
+/* LOADING BARS */
+/* =============================================== */
+
 .ui__loading-bar {
     background-color: var(--flexoki-background-elevated);
     border-radius: var(--flexoki-radius-full);
