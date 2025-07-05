@@ -631,9 +631,11 @@ a.tag:hover {
 }
 
 .block-ref-wrap.inline {
-    display: inline-block;
-    margin: var(--flexoki-space-md) var(--flexoki-space-xs);
-    vertical-align: top;
+    margin: 0 var(--flexoki-space-xs);
+    padding: var(--flexoki-space-xs) var(--flexoki-space-md);
+    vertical-align: baseline;
+    border-radius: var(--flexoki-radius-sm);
+    transform: translateY(-1px);
 }
 
 /* =============================================== */
