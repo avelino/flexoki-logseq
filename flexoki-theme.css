@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
 
-/* 
+/*
  * Flexoki Theme v2.0 for Logseq
  * Enhanced version with improved accessibility, performance, and maintainability
  * Base color system inspired by Flexoki palette
@@ -17,7 +17,7 @@
     --flexoki-bp-md: 768px;
     --flexoki-bp-lg: 1024px;
     --flexoki-bp-xl: 1280px;
-    
+
     /* Spacing System */
     --flexoki-space-xs: 2px;
     --flexoki-space-sm: 4px;
@@ -26,7 +26,7 @@
     --flexoki-space-xl: 24px;
     --flexoki-space-2xl: 32px;
     --flexoki-space-3xl: 48px;
-    
+
     /* Border Radius */
     --flexoki-radius-none: 0;
     --flexoki-radius-sm: 3px;
@@ -34,7 +34,7 @@
     --flexoki-radius-lg: 12px;
     --flexoki-radius-xl: 16px;
     --flexoki-radius-full: 9999px;
-    
+
     /* Typography Scale */
     --flexoki-text-xs: 0.75rem;
     --flexoki-text-sm: 0.875rem;
@@ -44,25 +44,29 @@
     --flexoki-text-2xl: 1.5rem;
     --flexoki-text-3xl: 1.875rem;
     --flexoki-text-4xl: 2.25rem;
-    
+
     /* Font Weights */
     --flexoki-font-light: 300;
     --flexoki-font-normal: 400;
     --flexoki-font-medium: 500;
     --flexoki-font-semibold: 600;
     --flexoki-font-bold: 700;
-    
+
     /* Shadows */
     --flexoki-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    --flexoki-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --flexoki-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    --flexoki-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    
+    --flexoki-shadow-md:
+        0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --flexoki-shadow-lg:
+        0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --flexoki-shadow-xl:
+        0 20px 25px -5px rgba(0, 0, 0, 0.1),
+        0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
     /* Transitions */
     --flexoki-transition-fast: 0.15s ease;
     --flexoki-transition-base: 0.2s ease;
     --flexoki-transition-slow: 0.3s ease;
-    
+
     /* Z-Index Scale */
     --flexoki-z-dropdown: 1000;
     --flexoki-z-sticky: 1020;
@@ -76,7 +80,7 @@
 /* FLEXOKI COLOR SYSTEM */
 /* =============================================== */
 
-/* 
+/*
  * Color naming convention:
  * - base-XX: Neutral colors (00 = lightest in light theme, 100 = darkest)
  * - Accent colors: red, orange, yellow, green, cyan, blue, purple, pink
@@ -84,31 +88,31 @@
  */
 
 /* Light Theme Colors */
-.white-theme, 
-html[data-theme=light] {
+.white-theme,
+html[data-theme="light"] {
     /* Flexoki Base Colors - Light */
-    --flexoki-base-00: #FFFCF0;
-    --flexoki-base-05: #FFFCF0;
-    --flexoki-base-10: #F2F0E5;
-    --flexoki-base-20: #F2F0E5;
-    --flexoki-base-25: #E6E4D9;
-    --flexoki-base-30: #E6E4D9;
-    --flexoki-base-35: #DAD8CE;
-    --flexoki-base-40: #CECDC3;
-    --flexoki-base-50: #B7B5AC;
+    --flexoki-base-00: #fffcf0;
+    --flexoki-base-05: #fffcf0;
+    --flexoki-base-10: #f2f0e5;
+    --flexoki-base-20: #f2f0e5;
+    --flexoki-base-25: #e6e4d9;
+    --flexoki-base-30: #e6e4d9;
+    --flexoki-base-35: #dad8ce;
+    --flexoki-base-40: #cecdc3;
+    --flexoki-base-50: #b7b5ac;
     --flexoki-base-60: #878580;
-    --flexoki-base-70: #6F6E69;
-    --flexoki-base-100: #100F0F;
+    --flexoki-base-70: #6f6e69;
+    --flexoki-base-100: #100f0f;
 
     /* Flexoki Accent Colors - Light */
-    --flexoki-red: #AF3029;
-    --flexoki-orange: #BC5215;
-    --flexoki-yellow: #AD8301;
-    --flexoki-green: #66800B;
-    --flexoki-cyan: #24837B;
-    --flexoki-blue: #205EA6;
-    --flexoki-purple: #5E409D;
-    --flexoki-pink: #A02F6F;
+    --flexoki-red: #af3029;
+    --flexoki-orange: #bc5215;
+    --flexoki-yellow: #ad8301;
+    --flexoki-green: #66800b;
+    --flexoki-cyan: #24837b;
+    --flexoki-blue: #205ea6;
+    --flexoki-purple: #5e409d;
+    --flexoki-pink: #a02f6f;
 
     /* HSL versions for transparency */
     --flexoki-red-hsl: 5, 65%, 42%;
@@ -153,30 +157,30 @@ html[data-theme=light] {
 }
 
 /* Dark Theme Colors */
-html[data-theme=dark] {
+html[data-theme="dark"] {
     /* Flexoki Base Colors - Dark */
-    --flexoki-base-00: #100F0F;
-    --flexoki-base-05: #100F0F;
-    --flexoki-base-10: #1C1B1A;
-    --flexoki-base-20: #1C1B1A;
+    --flexoki-base-00: #100f0f;
+    --flexoki-base-05: #100f0f;
+    --flexoki-base-10: #1c1b1a;
+    --flexoki-base-20: #1c1b1a;
     --flexoki-base-25: #282726;
     --flexoki-base-30: #282726;
     --flexoki-base-35: #343331;
-    --flexoki-base-40: #403E3C;
+    --flexoki-base-40: #403e3c;
     --flexoki-base-50: #575653;
-    --flexoki-base-60: #6F6E69;
+    --flexoki-base-60: #6f6e69;
     --flexoki-base-70: #878580;
-    --flexoki-base-100: #CECDC3;
+    --flexoki-base-100: #cecdc3;
 
     /* Flexoki Accent Colors - Dark */
-    --flexoki-red: #D14D41;
-    --flexoki-orange: #DA702C;
-    --flexoki-yellow: #D0A215;
-    --flexoki-green: #879A39;
-    --flexoki-cyan: #3AA99F;
-    --flexoki-blue: #4385BE;
-    --flexoki-purple: #8B7EC8;
-    --flexoki-pink: #CE5D97;
+    --flexoki-red: #d14d41;
+    --flexoki-orange: #da702c;
+    --flexoki-yellow: #d0a215;
+    --flexoki-green: #879a39;
+    --flexoki-cyan: #3aa99f;
+    --flexoki-blue: #4385be;
+    --flexoki-purple: #8b7ec8;
+    --flexoki-pink: #ce5d97;
 
     /* HSL versions for transparency */
     --flexoki-red-hsl: 5, 62%, 54%;
@@ -228,7 +232,7 @@ html[data-theme=dark] {
 *,
 *::before,
 *::after {
-    transition: 
+    transition:
         background-color var(--flexoki-transition-base),
         border-color var(--flexoki-transition-base),
         color var(--flexoki-transition-base),
@@ -279,7 +283,13 @@ html[data-theme=dark] {
     );
     background-position: 0 0;
     background-size: 25px 25px;
-    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family:
+        "IBM Plex Sans",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        sans-serif;
     color: var(--flexoki-text-primary);
     background-color: var(--flexoki-background);
 }
@@ -292,7 +302,7 @@ html[data-theme=dark] {
 }
 
 /* Whiteboard mode - clean background */
-body[data-page=whiteboard] #app-container {
+body[data-page="whiteboard"] #app-container {
     background-image: none;
     background-color: var(--flexoki-background);
 }
@@ -434,12 +444,14 @@ h1.page-title {
 }
 
 /* Text emphasis with improved contrast */
-b, strong {
+b,
+strong {
     color: var(--flexoki-text-primary);
     font-weight: var(--flexoki-font-semibold);
 }
 
-i, em {
+i,
+em {
     color: var(--flexoki-text-secondary);
     font-weight: var(--flexoki-font-medium);
     font-style: italic;
@@ -459,7 +471,7 @@ mark {
 code {
     background-color: var(--flexoki-background-elevated);
     color: var(--flexoki-cyan);
-    font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', Consolas, monospace;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Consolas, monospace;
     font-size: 0.9em;
     padding: var(--flexoki-space-xs) var(--flexoki-space-sm);
     border-radius: var(--flexoki-radius-sm);
@@ -577,14 +589,22 @@ a.tag:hover {
 
 /* Enhanced bullet points */
 .bullet-container .bullet {
-    background: linear-gradient(135deg, var(--flexoki-cyan), var(--flexoki-blue));
+    background: linear-gradient(
+        135deg,
+        var(--flexoki-cyan),
+        var(--flexoki-blue)
+    );
     border-radius: var(--flexoki-radius-full);
     box-shadow: var(--flexoki-shadow-sm);
     transition: all var(--flexoki-transition-base);
 }
 
 .bullet-container:hover .bullet {
-    background: linear-gradient(135deg, var(--flexoki-blue), var(--flexoki-purple));
+    background: linear-gradient(
+        135deg,
+        var(--flexoki-blue),
+        var(--flexoki-purple)
+    );
     transform: scale(1.1);
     box-shadow: var(--flexoki-shadow-md);
 }
@@ -665,7 +685,7 @@ a.tag:hover {
 }
 
 .form-checkbox:checked::after {
-    content: '✓';
+    content: "✓";
     position: absolute;
     top: 50%;
     left: 50%;
@@ -778,6 +798,54 @@ button.ui__button.ui__button-theme-color:hover {
 }
 
 /* =============================================== */
+/* MENU, DROPDOWN AND POPOVER STYLES */
+/* =============================================== */
+
+/* Specific styles for sync menu based on HTML structure */
+.menu-links-wrapper {
+    color: var(--flexoki-text-primary) !important;
+}
+
+.menu-links-wrapper .menu-link {
+    color: var(--flexoki-text-primary) !important;
+    padding: var(--flexoki-space-md) var(--flexoki-space-lg) !important;
+    text-decoration: none !important;
+    display: flex !important;
+    align-items: center !important;
+    border-radius: var(--flexoki-radius-sm) !important;
+    margin: var(--flexoki-space-xs) !important;
+}
+
+.menu-links-wrapper .menu-link:hover {
+    background-color: var(--flexoki-background-secondary) !important;
+    color: var(--flexoki-text-primary) !important;
+}
+
+.menu-links-wrapper .file-sync-item {
+    color: var(--flexoki-text-primary) !important;
+    font-weight: var(--flexoki-font-medium) !important;
+    font-size: var(--flexoki-text-sm) !important;
+}
+
+.menu-links-wrapper .ui__humanity-time {
+    color: var(--flexoki-text-secondary) !important;
+    font-size: var(--flexoki-text-xs) !important;
+    opacity: 0.8 !important;
+}
+
+.menu-links-wrapper .files-history {
+    color: var(--flexoki-text-primary) !important;
+}
+
+.menu-links-wrapper .title-wrap {
+    color: var(--flexoki-text-primary) !important;
+}
+
+.menu-links-wrapper .opacity-50 {
+    opacity: 0.7 !important;
+}
+
+/* =============================================== */
 /* CODE BLOCKS AND SYNTAX HIGHLIGHTING */
 /* =============================================== */
 
@@ -786,7 +854,7 @@ button.ui__button.ui__button-theme-color:hover {
     color: var(--flexoki-text-secondary);
     border-radius: var(--flexoki-radius-md);
     border: 1px solid var(--flexoki-border-light);
-    font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', Consolas, monospace;
+    font-family: "JetBrains Mono", "Fira Code", "SF Mono", Consolas, monospace;
     font-size: var(--flexoki-text-sm);
     line-height: 1.6;
 }
@@ -1029,27 +1097,27 @@ progress {
     vertical-align: middle;
     border-radius: var(--flexoki-radius-md);
     height: var(--flexoki-text-lg);
-  width: 15%;
-  min-width: 50px;
-  max-width: 100px;
+    width: 15%;
+    min-width: 50px;
+    max-width: 100px;
     border: 1px solid var(--flexoki-border);
     overflow: hidden;
 }
-  
+
 progress::-webkit-progress-bar {
-  background: var(--flexoki-background-elevated-secondary);
+    background: var(--flexoki-background-elevated-secondary);
 }
 
 progress::-moz-progress-bar {
-  background: var(--flexoki-background-elevated-secondary);
+    background: var(--flexoki-background-elevated-secondary);
 }
 
 progress::-webkit-progress-value {
-  background: var(--flexoki-blue);
+    background: var(--flexoki-blue);
 }
 
 progress::-moz-progress-value {
-  background: var(--flexoki-blue);
+    background: var(--flexoki-blue);
 }
 
 /* =============================================== */
@@ -1063,7 +1131,11 @@ progress::-moz-progress-value {
 }
 
 .ui__loading-bar .progress {
-    background: linear-gradient(90deg, var(--flexoki-blue), var(--flexoki-cyan));
+    background: linear-gradient(
+        90deg,
+        var(--flexoki-blue),
+        var(--flexoki-cyan)
+    );
     border-radius: var(--flexoki-radius-full);
 }
 
@@ -1072,49 +1144,97 @@ progress::-moz-progress-value {
 /* =============================================== */
 
 /* Background utilities */
-.flexoki-bg-primary { background-color: var(--flexoki-background); }
-.flexoki-bg-secondary { background-color: var(--flexoki-background-secondary); }
-.flexoki-bg-elevated { background-color: var(--flexoki-background-elevated); }
-.flexoki-bg-hover { background-color: var(--flexoki-background-elevated); }
+.flexoki-bg-primary {
+    background-color: var(--flexoki-background);
+}
+.flexoki-bg-secondary {
+    background-color: var(--flexoki-background-secondary);
+}
+.flexoki-bg-elevated {
+    background-color: var(--flexoki-background-elevated);
+}
+.flexoki-bg-hover {
+    background-color: var(--flexoki-background-elevated);
+}
 
 /* Text utilities */
-.flexoki-text-primary { color: var(--flexoki-text-primary); }
-.flexoki-text-secondary { color: var(--flexoki-text-secondary); }
-.flexoki-text-tertiary { color: var(--flexoki-text-tertiary); }
-.flexoki-text-accent { color: var(--flexoki-cyan); }
+.flexoki-text-primary {
+    color: var(--flexoki-text-primary);
+}
+.flexoki-text-secondary {
+    color: var(--flexoki-text-secondary);
+}
+.flexoki-text-tertiary {
+    color: var(--flexoki-text-tertiary);
+}
+.flexoki-text-accent {
+    color: var(--flexoki-cyan);
+}
 
 /* Border utilities */
-.flexoki-border { border: 1px solid var(--flexoki-border); }
-.flexoki-border-light { border: 1px solid var(--flexoki-border-light); }
-.flexoki-border-focus { border: 1px solid var(--flexoki-border-focus); }
+.flexoki-border {
+    border: 1px solid var(--flexoki-border);
+}
+.flexoki-border-light {
+    border: 1px solid var(--flexoki-border-light);
+}
+.flexoki-border-focus {
+    border: 1px solid var(--flexoki-border-focus);
+}
 
 /* Spacing utilities */
-.flexoki-p-sm { padding: var(--flexoki-space-sm); }
-.flexoki-p-md { padding: var(--flexoki-space-md); }
-.flexoki-p-lg { padding: var(--flexoki-space-lg); }
-.flexoki-m-sm { margin: var(--flexoki-space-sm); }
-.flexoki-m-md { margin: var(--flexoki-space-md); }
-.flexoki-m-lg { margin: var(--flexoki-space-lg); }
+.flexoki-p-sm {
+    padding: var(--flexoki-space-sm);
+}
+.flexoki-p-md {
+    padding: var(--flexoki-space-md);
+}
+.flexoki-p-lg {
+    padding: var(--flexoki-space-lg);
+}
+.flexoki-m-sm {
+    margin: var(--flexoki-space-sm);
+}
+.flexoki-m-md {
+    margin: var(--flexoki-space-md);
+}
+.flexoki-m-lg {
+    margin: var(--flexoki-space-lg);
+}
 
 /* Radius utilities */
-.flexoki-rounded-sm { border-radius: var(--flexoki-radius-sm); }
-.flexoki-rounded-md { border-radius: var(--flexoki-radius-md); }
-.flexoki-rounded-lg { border-radius: var(--flexoki-radius-lg); }
+.flexoki-rounded-sm {
+    border-radius: var(--flexoki-radius-sm);
+}
+.flexoki-rounded-md {
+    border-radius: var(--flexoki-radius-md);
+}
+.flexoki-rounded-lg {
+    border-radius: var(--flexoki-radius-lg);
+}
 
 /* Shadow utilities */
-.flexoki-shadow-sm { box-shadow: var(--flexoki-shadow-sm); }
-.flexoki-shadow-md { box-shadow: var(--flexoki-shadow-md); }
-.flexoki-shadow-lg { box-shadow: var(--flexoki-shadow-lg); }
+.flexoki-shadow-sm {
+    box-shadow: var(--flexoki-shadow-sm);
+}
+.flexoki-shadow-md {
+    box-shadow: var(--flexoki-shadow-md);
+}
+.flexoki-shadow-lg {
+    box-shadow: var(--flexoki-shadow-lg);
+}
 
 /* =============================================== */
 /* LOGSEQ VARIABLE MAPPINGS */
 /* =============================================== */
 
-.white-theme, 
-html[data-theme=light],
-html[data-theme=dark] {
+.white-theme,
+html[data-theme="light"],
+html[data-theme="dark"] {
     /* Font */
-    --ls-font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    --ls-font-family:
+        "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     --ls-main-content-max-width: 900px;
     --ls-tag-text-opacity: 0.8;
     --ls-tag-text-hover-opacity: 1;
@@ -1123,7 +1243,9 @@ html[data-theme=dark] {
     --ls-primary-background-color: var(--flexoki-background);
     --ls-secondary-background-color: var(--flexoki-background-quaternary);
     --ls-tertiary-background-color: var(--flexoki-background-elevated);
-    --ls-quaternary-background-color: var(--flexoki-background-elevated-tertiary);
+    --ls-quaternary-background-color: var(
+        --flexoki-background-elevated-tertiary
+    );
 
     /* Text Colors */
     --ls-primary-text-color: var(--flexoki-text-primary);
@@ -1246,16 +1368,16 @@ html[data-theme=dark] {
         --flexoki-space-xl: 16px;
         --flexoki-space-2xl: 20px;
     }
-    
+
     h1.page-title {
         font-size: var(--flexoki-text-2xl);
     }
-    
+
     .editor-inner .uniline-block.h1,
     .ls-block h1 {
         font-size: var(--flexoki-text-xl);
     }
-    
+
     button.ui__button {
         padding: var(--flexoki-space-sm) var(--flexoki-space-lg);
         font-size: var(--flexoki-text-xs);
@@ -1303,7 +1425,7 @@ html[data-theme=dark] {
     #app-container {
         background-image: none !important;
     }
-    
+
     * {
         transition: none !important;
         animation: none !important;
@@ -1324,4 +1446,3 @@ html[data-theme=dark] {
         /* Inherit light theme variables when system is in light mode */
     }
 }
-
