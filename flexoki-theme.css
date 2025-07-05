@@ -335,6 +335,59 @@ body[data-page="whiteboard"] #app-container {
     margin: var(--flexoki-space-xs) var(--flexoki-space-md);
 }
 
+/* Specific styles for favorite and recent items */
+#left-sidebar .favorite-item a,
+#left-sidebar .recent-item a {
+    color: var(--flexoki-text-primary) !important;
+    font-weight: var(--flexoki-font-medium);
+    border-radius: var(--flexoki-radius-sm);
+    padding: var(--flexoki-space-md) var(--flexoki-space-lg);
+    margin: var(--flexoki-space-xs) var(--flexoki-space-md);
+}
+
+/* Ensure page titles in sidebar are clearly visible */
+#left-sidebar .favorite-item .page-title,
+#left-sidebar .recent-item .page-title {
+    color: var(--flexoki-text-primary) !important;
+    font-weight: var(--flexoki-font-medium);
+}
+
+/* Override any conflicting styles for sidebar navigation text */
+#left-sidebar .nav-content-item .favorite-item a,
+#left-sidebar .nav-content-item .recent-item a,
+#left-sidebar .nav-content-item .favorite-item .page-title,
+#left-sidebar .nav-content-item .recent-item .page-title {
+    color: var(--flexoki-text-primary) !important;
+    opacity: 1 !important;
+}
+
+/* Ensure all text within sidebar items is readable */
+#left-sidebar .favorite-item,
+#left-sidebar .recent-item {
+    color: var(--flexoki-text-primary) !important;
+}
+
+#left-sidebar .favorite-item *,
+#left-sidebar .recent-item * {
+    color: inherit !important;
+}
+
+/* Ensure emojis and icons in sidebar items are visible */
+#left-sidebar .favorite-item .page-icon,
+#left-sidebar .recent-item .page-icon,
+#left-sidebar .favorite-item .awLi-icon,
+#left-sidebar .recent-item .awLi-icon {
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+/* Ensure UI icons in sidebar items are visible */
+#left-sidebar .favorite-item .ui__icon,
+#left-sidebar .recent-item .ui__icon {
+    color: var(--flexoki-text-secondary) !important;
+    opacity: 1 !important;
+}
+
 /* Sidebar hover states */
 .sidebar-link:hover,
 #left-sidebar a.item:hover,
