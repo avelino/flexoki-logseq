@@ -50,7 +50,6 @@ Thumbs.db
 
 # Linting configs
 .stylelintrc.json
-.eslintrc.json
 
 # Git
 .git/
