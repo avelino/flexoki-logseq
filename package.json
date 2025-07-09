@@ -55,5 +55,20 @@
   },
   "engines": {
     "logseq": ">=0.8.0"
+  },
+  "devDependencies": {
+    "stylelint": "^15.11.0",
+    "stylelint-config-standard": "^34.0.0"
+  },
+  "scripts": {
+    "lint": "stylelint '*.css'",
+    "lint:fix": "stylelint '*.css' --fix",
+    "lint:check": "stylelint '*.css' --formatter verbose",
+    "lint:watch": "stylelint '*.css' --watch",
+    "test": "npm run lint",
+    "precommit": "npm run lint",
+    "validate": "npm run lint:check",
+    "format": "prettier --write '*.{json,md,yml}'",
+    "format:check": "prettier --check '*.{json,md,yml}'"
   }
 }

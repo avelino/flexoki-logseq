@@ -8,6 +8,10 @@
   </a>
 </p>
 
+[![Lint](https://github.com/avelino/flexoki-logseq/workflows/Lint/badge.svg)](https://github.com/avelino/flexoki-logseq/actions/workflows/lint.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Version](https://img.shields.io/badge/version-2.0.4-blue.svg)](https://github.com/avelino/flexoki-logseq/releases)
+
 A beautiful, warm theme for Logseq inspired by Steph Ango's [Flexoki color scheme](https://stephango.com/flexoki). Designed for comfort and productivity with paper-like colors that are easy on the eyes.
 
 ![Flexoki Theme](./flexoki-theme.png)
@@ -62,6 +66,30 @@ The theme uses CSS variables that you can easily customize:
 ✅ Responsive design for mobile  
 ✅ Custom bullet points and checkboxes  
 ✅ Plugin-compatible styling  
+
+## Development
+
+### Code Quality
+This project uses [stylelint](https://stylelint.io/) to ensure consistent CSS code quality. The linting runs automatically on every push and pull request via GitHub Actions.
+
+#### Local Development
+```bash
+# Install dependencies
+npm install
+
+# Run lint check
+npm run lint
+
+# Auto-fix linting issues
+npm run lint:fix
+
+# Detailed lint report
+npm run lint:check
+```
+
+#### VS Code Integration
+Install the recommended extensions for the best development experience:
+- [stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
 
 ## Credits
 
