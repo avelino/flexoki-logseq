@@ -24,10 +24,5 @@ jobs:
       - name: Run stylelint
         run: npm run lint
 
-      - name: Lint Action
-        uses: wearerequired/lint-action@v2
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          stylelint: true
-          stylelint_dir: "."
-          auto_fix: true
+      - name: Run detailed lint check
+        run: npm run lint:check
