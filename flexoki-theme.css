@@ -529,6 +529,8 @@ code {
     padding: var(--flexoki-space-xs) var(--flexoki-space-sm);
     border-radius: var(--flexoki-radius-sm);
     border: 1px solid var(--flexoki-border-light);
+    display: inline;
+    vertical-align: baseline;
 }
 
 /* Enhanced blockquote */
@@ -566,6 +568,8 @@ blockquote::before {
     padding: var(--flexoki-space-xs) var(--flexoki-space-sm);
     background-color: var(--flexoki-blue-light);
     border: 1px solid transparent;
+    display: inline;
+    vertical-align: baseline;
 }
 
 .page-ref:hover {
@@ -607,6 +611,8 @@ a.tag {
     font-size: var(--flexoki-text-sm);
     font-weight: var(--flexoki-font-medium);
     border: 1px solid var(--flexoki-purple);
+    display: inline;
+    vertical-align: baseline;
 }
 
 a.tag:hover {
@@ -636,6 +642,9 @@ a.tag:hover {
     vertical-align: baseline;
     border-radius: var(--flexoki-radius-sm);
     transform: translateY(-1px);
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 100%;
 }
 
 /* =============================================== */
