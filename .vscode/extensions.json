@@ -1,0 +1,17 @@
+{
+  "recommendations": [
+    "stylelint.vscode-stylelint",
+    "bradlc.vscode-tailwindcss",
+    "ms-vscode.vscode-json",
+    "formulahendry.auto-rename-tag",
+    "christian-kohler.path-intellisense",
+    "streetsidesoftware.code-spell-checker",
+    "esbenp.prettier-vscode",
+    "ms-vscode.live-server",
+    "ritwickdey.liveserver"
+  ],
+  "unwantedRecommendations": [
+    "hookyqr.beautify",
+    "ms-vscode.vscode-typescript-next"
+  ]
+}
